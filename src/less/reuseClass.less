@@ -1,0 +1,44 @@
+// 重用的less类 begin
+.h_line_h (@value: 5px) {//height和line-height同值，文本垂直居中
+  height: @value;
+  line-height: @value;
+}
+.display_box(@value: raw){//flex布局，可以指定flex-direction的方向
+  &{
+    display: box;
+    display: -webkit-box;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: @value;
+    -webkit-flex-direction: @value;
+  }
+  >*{
+    display: block;
+  }
+}
+.locationLayout(@pos: absolute;@left: 0px; @top: 0px;@width: 100%;@height:100%){
+  position: @pos;
+  left: @left;
+  top: @top;
+  width:@width;
+  height: @height;
+}
+.inline_block_Box(@fontSize:12px){
+  &{
+    font-size: 0px;
+  }
+  >*{
+    display: inline-block;
+    font-size:@fontSize;
+    vertical-align: top;
+  }
+}
+.breakLine(){
+  white-space: normal;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+// 重用的less类 end
+
+//媒体查询
+@iphone4Query: ~"(max-width: 320px)";

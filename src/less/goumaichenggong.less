@@ -1,0 +1,40 @@
+@import "reuseClass.less";//引入less重用class样式
+/* 购买成功私有css文件 */
+.gmcg_body{
+  &{
+    background-color: #f8d39a;
+  }
+  .tip_p{
+    font-size:20px;
+    position: absolute;
+    width: 65.3%;
+    left: 17.8%;
+    top: 44.2%;
+    .h_line_h(30px);
+    color: #F15858;
+    text-align: center;
+  }
+  .share_link{
+    left: 39.6%;
+    top: 55%;
+    width: 21.1%;
+    height: 19.6%;
+    position: absolute;
+  }
+  .share_p{
+    color: #F15858;
+    text-align: center;
+    font-size:18px;
+    margin-top: 60px;
+  }
+}
+
+/* 媒体查询 begin */
+@media screen and @iphone4Query {
+  .gmcg_body{
+    .share_p{
+      margin-top:40px;
+    }
+  }
+}
+/* 媒体查询 end */

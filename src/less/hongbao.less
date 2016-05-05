@@ -1,0 +1,134 @@
+@import "reuseClass.less";//引入less重用class样式
+/* 红包页面私有css文件 */
+.hongbao_body{
+  .tabTitle{
+    &{
+      .inline_block_Box(16px);
+      text-align: center;
+      border-bottom:1px solid #EAEAEA;
+    }
+    li{
+      &{
+        .h_line_h(36px);
+        border-bottom: 3px solid #fff;
+      }
+      &:last-child{
+        margin-left:40px;
+      }
+      &.active{
+        @colorVal:#FF6E68;
+        border-color: @colorVal;
+        color: @colorVal;
+      }
+    }
+  }
+  .tabContBox{
+    &{
+      padding: 50px 10% 0px 10%;
+    }
+    .tabItem{
+      display: none;
+    }
+    .tabItem:first-child{
+      display: block;
+    }
+    .inputWrap{
+      &{
+        .display_box();
+        border:1px solid rgba(151, 151, 151, 0.4);
+        border-radius:3px;
+        .h_line_h(40px);
+        font-size:18px;
+      }
+      &:nth-of-type(2){
+        margin-top:25px;
+      }
+      div:nth-of-type(1){
+        padding-left:10px;
+        color: #878787;
+      }
+      div:nth-of-type(2){
+        flex: 1;
+        -webkit-flex: 1;
+      }
+      div:nth-of-type(3){
+        padding-right:10px;
+        color: #4F4F4F;
+        padding-right:10px;
+      }
+      .formInput{
+        &{
+          .h_line_h(40px);
+          border: none;
+          box-sizing: border-box;
+          display: block;
+          text-align: right;
+          padding-right:10px;
+          width:100%;
+          font-size:18px;
+          color: #F15858;
+        }
+        &::-webkit-input-placeholder{
+          color: #878787;
+        }
+      }
+    }
+    .error_p{
+      font-size:12px;
+      color: #ff0000;
+      .h_line_h(20px);
+      display: none;
+    }
+    .tip_p{
+      color: #9B9B9B;
+      font-size:12px;
+      padding: 10px 0px 15px 0px;
+    }
+    .formTextArea{
+      border: 1px solid rgba(151, 151, 151, 0.4);
+      border-radius:3px;
+      display: block;
+      width:100%;
+      height: 80px;
+      color: #878787;
+      font-size:18px;
+      box-sizing: border-box;
+      padding: 10px;
+    }
+    .totalVal{
+      &{
+        font-size:36px;
+        color: #9B9B9B;
+        .h_line_h(146px);
+        text-align: center;
+      }
+      &.valid{
+        color: #FF726C;
+      }
+    }
+    .submitBtn{
+      &{
+        font-size:18px;
+        color: #fff;
+        display: block;
+        width:100%;
+        .h_line_h(60px);
+        border-radius:5px;
+        border:none;
+        background-color: #FF726C;
+      }
+      &.disabled{
+        background-color: rgba(255,114,108,0.62);
+      }
+    }
+  }
+}
+/* 媒体查询 begin */
+@media screen and @iphone4Query {
+  .hongbao_body{
+    .tabContBox .totalVal{
+      .h_line_h(90px);
+    }
+  }
+}
+/* 媒体查询 end */

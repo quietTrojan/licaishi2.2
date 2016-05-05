@@ -1,0 +1,79 @@
+@import "reuseClass.less";//引入less重用class样式
+/* 营销助理私有css文件 */
+.yxzl_body{
+  &{
+    background-color: #FF726C;
+  }
+  .yxzlInner{
+    .locationLayout(fixed);
+    .display_box(column);
+  }
+  .title_h3{
+    font-size:24px;
+    color: #F8D39A;
+    text-align: center;
+    .h_line_h(90px);
+  }
+  .hbBox{
+    &{
+      flex:1;
+      -webkit-flex:1;
+      position: relative;
+    }
+    .bottomImg{
+      position: absolute;
+      width:100%;
+      height: auto;
+      left: 0px;
+      bottom: 0px;
+    }
+  }
+  .hbInner{
+    &{
+      .locationLayout(absolute,5.555555555555555%,0px,89.13043478260869%);
+      background-color: #FFF7DD;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      margin:0px auto;
+      box-sizing: border-box;
+      padding-top:85px;
+    }
+    >a{
+      &{
+        display: block;
+        width:83%;
+        .h_line_h(60px);
+        border-radius: 5px;
+        font-size:18px;
+        text-align: center;
+        margin:0px auto;
+      }
+      &:nth-of-type(1){
+        background-color: #FF726C;
+        color: #fff;
+      }
+      &:nth-of-type(2){
+        margin-top:30px;
+        background-color: #FFD087;
+        color: #F15858;
+      }
+    }
+  }
+}
+
+/* 媒体查询 begin */
+@media screen and @iphone4Query {
+  .yxzl_body{
+    .hbInner{
+      &{
+        padding-top:35px;
+      }
+      >a{
+        &:nth-of-type(2){
+          margin-top:20px;
+        }
+      }
+    }
+  }
+}
+/* 媒体查询 end */
