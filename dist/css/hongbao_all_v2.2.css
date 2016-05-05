@@ -1,0 +1,713 @@
+/* css 重置 begin */
+* {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif, '微软雅黑';
+  color: #333;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul,
+li {
+  list-style: none;
+}
+input[type="text"],
+input[type="tel"],
+input[type="number"] {
+  outline: none;
+  border: none;
+}
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  -webkit-appearance: none;
+  outline: none;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+textarea {
+  resize: none;
+  outline: none;
+}
+.imgWrap {
+  position: relative;
+  max-width: 100%;
+}
+.imgWrap > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.imgWrap .imgInner {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+.paddingPopBox {
+  height: 0px;
+  padding-top: 100%;
+  position: relative;
+}
+.paddingPopBox .paddingPopInner {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0px;
+}
+/* css 重置 end */
+/* 购买成功私有css文件 */
+.gmcg_body {
+  background-color: #f8d39a;
+}
+.gmcg_body .tip_p {
+  font-size: 20px;
+  position: absolute;
+  width: 65.3%;
+  left: 17.8%;
+  top: 44.2%;
+  height: 30px;
+  line-height: 30px;
+  color: #F15858;
+  text-align: center;
+}
+.gmcg_body .share_link {
+  left: 39.6%;
+  top: 55%;
+  width: 21.1%;
+  height: 19.6%;
+  position: absolute;
+}
+.gmcg_body .share_p {
+  color: #F15858;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 60px;
+}
+/* 媒体查询 begin */
+@media screen and (max-width: 320px) {
+  .gmcg_body .share_p {
+    margin-top: 40px;
+  }
+}
+/* 媒体查询 end */
+/* 购买记录私有css文件 */
+.gmjl_body {
+  background-color: #EEEEEE;
+}
+.gmjl_body .itemBox {
+  padding: 20px 20px 20px 20px;
+  border-bottom: 1px solid #E6E6E6;
+  background-color: #fff;
+}
+.gmjl_body .itemBox::after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0px;
+}
+.gmjl_body .itemBox.over .left .iconBox {
+  background-image: url("../images/redPacket_disabled.png");
+}
+.gmjl_body .itemBox.over .right .oprBtn {
+  background-color: #d0d0d0;
+}
+.gmjl_body .itemBox.in_hand .right .oprBtn {
+  background-color: transparent;
+  color: #f15858;
+}
+.gmjl_body .itemBox .left {
+  float: left;
+}
+.gmjl_body .itemBox .left .iconBox {
+  width: 60px;
+  height: 60px;
+  background: url("../images/redPacket_available.png") no-repeat;
+  background-size: 60px 60px;
+  float: left;
+}
+.gmjl_body .itemBox .left .textBox {
+  float: left;
+  margin-left: 10px;
+  position: relative;
+  padding-top: 46px;
+}
+.gmjl_body .itemBox .left .textBox .timer {
+  white-space: nowrap;
+  word-break: normal;
+  word-wrap: normal;
+  font-size: 12px;
+  color: #9b9b9b;
+  height: 14px;
+  line-height: 14px;
+}
+.gmjl_body .itemBox .left .textBox .dataInfor {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 46px;
+  font-size: 20px;
+}
+.gmjl_body .itemBox .left .textBox .dataInfor p {
+  height: 23px;
+  line-height: 23px;
+}
+.gmjl_body .itemBox .left .textBox .dataInfor p:nth-of-type(1) span:first-child {
+  float: left;
+  color: #4F4F4F;
+}
+.gmjl_body .itemBox .left .textBox .dataInfor p:nth-of-type(1) span:last-child {
+  float: right;
+  color: #A3A3A3;
+}
+.gmjl_body .itemBox .left .textBox .dataInfor p:nth-of-type(2) {
+  color: #F05656;
+}
+.gmjl_body .itemBox .right {
+  float: right;
+}
+.gmjl_body .itemBox .right .oprBtn {
+  width: 78px;
+  height: 40px;
+  line-height: 40px;
+  float: right;
+  text-align: center;
+  background-color: #f15858;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 10px;
+}
+/* 媒体查询 begin */
+@media screen and (max-width: 320px) {
+  .gmjl_body .itemBox {
+    padding: 20px 10px;
+  }
+  .gmjl_body .itemBox .left .textBox {
+    margin-left: 8px;
+  }
+  .gmjl_body .itemBox .right .oprBtn {
+    width: 50px;
+    font-size: 14px;
+  }
+}
+/* 媒体查询 end */
+/* 红包页面私有css文件 */
+.hongbao_body .tabTitle {
+  font-size: 0px;
+  text-align: center;
+  border-bottom: 1px solid #EAEAEA;
+}
+.hongbao_body .tabTitle > * {
+  display: inline-block;
+  font-size: 16px;
+  vertical-align: top;
+}
+.hongbao_body .tabTitle li {
+  height: 36px;
+  line-height: 36px;
+  border-bottom: 3px solid #fff;
+}
+.hongbao_body .tabTitle li:last-child {
+  margin-left: 40px;
+}
+.hongbao_body .tabTitle li.active {
+  border-color: #FF6E68;
+  color: #FF6E68;
+}
+.hongbao_body .tabContBox {
+  padding: 50px 10% 0px 10%;
+}
+.hongbao_body .tabContBox .tabItem {
+  display: none;
+}
+.hongbao_body .tabContBox .tabItem:first-child {
+  display: block;
+}
+.hongbao_body .tabContBox .inputWrap {
+  display: box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: raw;
+          flex-direction: raw;
+  -webkit-flex-direction: raw;
+  border: 1px solid rgba(151, 151, 151, 0.4);
+  border-radius: 3px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+}
+.hongbao_body .tabContBox .inputWrap > * {
+  display: block;
+}
+.hongbao_body .tabContBox .inputWrap:nth-of-type(2) {
+  margin-top: 25px;
+}
+.hongbao_body .tabContBox .inputWrap div:nth-of-type(1) {
+  padding-left: 10px;
+  color: #878787;
+}
+.hongbao_body .tabContBox .inputWrap div:nth-of-type(2) {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-flex: 1;
+}
+.hongbao_body .tabContBox .inputWrap div:nth-of-type(3) {
+  color: #4F4F4F;
+  padding-right: 10px;
+}
+.hongbao_body .tabContBox .inputWrap .formInput {
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  box-sizing: border-box;
+  display: block;
+  text-align: right;
+  padding-right: 10px;
+  width: 100%;
+  font-size: 18px;
+  color: #F15858;
+}
+.hongbao_body .tabContBox .inputWrap .formInput::-webkit-input-placeholder {
+  color: #878787;
+}
+.hongbao_body .tabContBox .error_p {
+  font-size: 12px;
+  color: #ff0000;
+  height: 20px;
+  line-height: 20px;
+  display: none;
+}
+.hongbao_body .tabContBox .tip_p {
+  color: #9B9B9B;
+  font-size: 12px;
+  padding: 10px 0px 15px 0px;
+}
+.hongbao_body .tabContBox .formTextArea {
+  border: 1px solid rgba(151, 151, 151, 0.4);
+  border-radius: 3px;
+  display: block;
+  width: 100%;
+  height: 80px;
+  color: #878787;
+  font-size: 18px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.hongbao_body .tabContBox .totalVal {
+  font-size: 36px;
+  color: #9B9B9B;
+  height: 146px;
+  line-height: 146px;
+  text-align: center;
+}
+.hongbao_body .tabContBox .totalVal.valid {
+  color: #FF726C;
+}
+.hongbao_body .tabContBox .submitBtn {
+  font-size: 18px;
+  color: #fff;
+  display: block;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 5px;
+  border: none;
+  background-color: #FF726C;
+}
+.hongbao_body .tabContBox .submitBtn.disabled {
+  background-color: rgba(255, 114, 108, 0.62);
+}
+/* 媒体查询 begin */
+@media screen and (max-width: 320px) {
+  .hongbao_body .tabContBox .totalVal {
+    height: 90px;
+    line-height: 90px;
+  }
+}
+/* 媒体查询 end */
+/* 营销助理私有css文件 */
+.yxzl_body {
+  background-color: #FF726C;
+}
+.yxzl_body .yxzlInner {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  display: box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-direction: column;
+}
+.yxzl_body .yxzlInner > * {
+  display: block;
+}
+.yxzl_body .title_h3 {
+  font-size: 24px;
+  color: #F8D39A;
+  text-align: center;
+  height: 90px;
+  line-height: 90px;
+}
+.yxzl_body .hbBox {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-flex: 1;
+  position: relative;
+}
+.yxzl_body .hbBox .bottomImg {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  left: 0px;
+  bottom: 0px;
+}
+.yxzl_body .hbInner {
+  position: absolute;
+  left: 5.55555556%;
+  top: 0px;
+  width: 89.13043478%;
+  height: 100%;
+  background-color: #FFF7DD;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin: 0px auto;
+  box-sizing: border-box;
+  padding-top: 85px;
+}
+.yxzl_body .hbInner > a {
+  display: block;
+  width: 83%;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+  margin: 0px auto;
+}
+.yxzl_body .hbInner > a:nth-of-type(1) {
+  background-color: #FF726C;
+  color: #fff;
+}
+.yxzl_body .hbInner > a:nth-of-type(2) {
+  margin-top: 30px;
+  background-color: #FFD087;
+  color: #F15858;
+}
+/* 媒体查询 begin */
+@media screen and (max-width: 320px) {
+  .yxzl_body .hbInner {
+    padding-top: 35px;
+  }
+  .yxzl_body .hbInner > a:nth-of-type(2) {
+    margin-top: 20px;
+  }
+}
+/* 媒体查询 end */
+/* 购买记录私有css文件 */
+.zcdyh_body {
+  background-color: #EEEEEE;
+}
+.zcdyh_body .listBox li {
+  display: box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: raw;
+          flex-direction: raw;
+  -webkit-flex-direction: raw;
+}
+.zcdyh_body .listBox li > * {
+  display: block;
+}
+.zcdyh_body .listBox li div {
+  box-sizing: border-box;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.zcdyh_body .listBox li div:nth-of-type(1) {
+  padding-left: 20px;
+  -webkit-box-flex: 150px;
+  -webkit-flex: 150px;
+      -ms-flex: 150px;
+          flex: 150px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+}
+.zcdyh_body .listBox .header_li {
+  height: 28px;
+  line-height: 28px;
+  font-size: 12px;
+  color: #4a4a4a;
+}
+.zcdyh_body .listBox .item_li {
+  background-color: #fff;
+  font-size: 20px;
+  height: 58px;
+  line-height: 58px;
+  border-bottom: 1px solid #E6E6E6;
+  color: #9C9C9C;
+}
+.zcdyh_body .listBox .item_li div:nth-of-type(1) {
+  color: #444444;
+}
+.zcdyh_body .listBox .item_li div:nth-of-type(1) span {
+  padding-left: 25px;
+  display: block;
+  background: url("../images/no_checked.png") no-repeat left center;
+  background-size: 16px 16px;
+}
+.zcdyh_body .listBox .item_li div:nth-of-type(1) span.checked {
+  background-image: url("../images/checked.png");
+}
+/* 媒体查询 begin */
+/* 媒体查询 end */
+/* 购买记录私有css文件 */
+.bangka_body {
+  background-color: #EEEEEE;
+}
+.bangka_body .mainBox {
+  padding: 0px 5%;
+}
+.bangka_body .title_h3 {
+  font-weight: normal;
+  color: #4a4a4a;
+  font-size: 18px;
+  padding: 20px 0px 30px 0px;
+}
+.bangka_body .formBox.mobile {
+  margin-top: 35px;
+}
+.bangka_body .formGroup {
+  display: box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: raw;
+          flex-direction: raw;
+  -webkit-flex-direction: raw;
+  height: 50px;
+  box-sizing: border-box;
+  border: 1px solid #D8D8D8;
+  border-radius: 3px;
+  background-color: #fff;
+  padding: 0px 10px;
+  margin-top: 20px;
+  overflow-x: hidden;
+}
+.bangka_body .formGroup > * {
+  display: block;
+}
+.bangka_body .formGroup:first-child {
+  margin-top: 0px;
+}
+.bangka_body .formGroup .formLabel {
+  font-size: 18px;
+  color: #4a4a4a;
+  line-height: 50px;
+  -webkit-flex-basis: 60px;
+      -ms-flex-preferred-size: 60px;
+          flex-basis: 60px;
+  display: box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: raw;
+          flex-direction: raw;
+  -webkit-flex-direction: raw;
+  margin-right: 15px;
+}
+.bangka_body .formGroup .formLabel > * {
+  display: block;
+}
+.bangka_body .formGroup .formLabel i {
+  font-style: normal;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+.bangka_body .formGroup .formLabel i:nth-of-type(1) {
+  text-align: left;
+}
+.bangka_body .formGroup .formLabel i:nth-of-type(3) {
+  text-align: right;
+}
+.bangka_body .formGroup .inputWrap {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.bangka_body .formGroup .formInput {
+  border: none;
+  background-color: #ffffff;
+  color: #4a4a4a;
+  font-size: 18px;
+  height: 48px;
+  line-height: 48px;
+  width: 100%;
+  display: block;
+}
+.bangka_body .formGroup .formInput.disabled {
+  color: #878787;
+}
+.bangka_body .formGroup .codeVerify {
+  height: 32px;
+  line-height: 32px;
+  border-radius: 5px;
+  background-color: #4790ef;
+  border: none;
+  color: #ffffff;
+  padding: 0px 10px;
+  margin-top: 8px;
+}
+.bangka_body .formGroup .codeVerify.disabled {
+  background-color: #d0d0d0;
+}
+.bangka_body .formGroup .formLink {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 18px;
+  color: #5291d7;
+  line-height: 50px;
+  background: url("../images/link_bg.png") no-repeat right center;
+}
+.bangka_body .submitBtn {
+  width: 80%;
+  height: 50px;
+  background-color: #ff726c;
+  font-size: 18px;
+  color: #ffffff;
+  border: none;
+  display: block;
+  margin: 0px auto;
+  border-radius: 5px;
+}
+.bangka_body .submitBtn.bangka {
+  margin-top: 87px;
+}
+/* 媒体查询 begin */
+/* 媒体查询 end */
+/* 购买记录私有css文件 */
+.myBankCard_body {
+  background-color: #EEEEEE;
+}
+.myBankCard_body .mainBox {
+  padding: 0px 5%;
+}
+.myBankCard_body .title_h3 {
+  color: #4a4a4a;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 26px;
+  padding-top: 20px;
+}
+.myBankCard_body .bankCardInfor {
+  background-color: #fff;
+  border-radius: 3px;
+  margin-top: 22px;
+  border: 1px solid #E2E2E2;
+}
+.myBankCard_body .bankCardInfor.noBank {
+  margin-top: 50px;
+}
+.myBankCard_body .bankCardInfor .noBankTip,
+.myBankCard_body .bankCardInfor .addBankCard {
+  color: #f15858;
+  height: 82px;
+  line-height: 82px;
+  font-size: 24px;
+  text-align: center;
+  display: block;
+}
+.myBankCard_body .bankCardInfor .cardBox {
+  padding: 20px 25px 20px 25px;
+}
+.myBankCard_body .bankCardInfor .cardBox .left {
+  float: left;
+}
+.myBankCard_body .bankCardInfor .cardBox .left p:nth-of-type(1) {
+  font-size: 20px;
+  color: #4a4a4a;
+  height: 26px;
+  line-height: 26px;
+}
+.myBankCard_body .bankCardInfor .cardBox .left p:nth-of-type(2) {
+  font-size: 14px;
+  color: #9B9B9B;
+  height: 20px;
+  line-height: 20px;
+}
+.myBankCard_body .bankCardInfor .cardBox .right {
+  float: right;
+}
+.myBankCard_body .bankCardInfor .cardBox .right img {
+  height: 22px;
+  margin-top: 12px;
+}
+.myBankCard_body .bankCardInfor .unBind {
+  margin: 0px 2px;
+  border-top: 1px solid #EAEAEA;
+  height: 56px;
+  line-height: 56px;
+  font-size: 18px;
+  color: #ff726c;
+  display: block;
+  text-align: center;
+}
+/* 媒体查询 begin */
+/* 媒体查询 end */

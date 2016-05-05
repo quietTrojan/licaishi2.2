@@ -1,0 +1,117 @@
+@import "reuseClass.less";//引入less重用class样式
+/* 购买记录私有css文件 */
+.bangka_body{
+  &{
+    background-color: #EEEEEE;
+  }
+  .mainBox{
+    padding: 0px 5%;
+  }
+  .title_h3{
+    font-weight: normal;
+    color: #4a4a4a;
+    font-size:18px;
+    padding: 20px 0px 30px 0px;
+  }
+  .formBox{
+    &.mobile{
+      margin-top:35px;
+    }
+  }
+  .formGroup{
+    &{
+      .display_box;
+      height: 50px;
+      box-sizing: border-box;
+      border: 1px solid #D8D8D8;
+      border-radius:3px;
+      background-color: #fff;
+      padding: 0px 10px;
+      margin-top:20px;
+      overflow-x: hidden;
+    }
+    &:first-child{
+      margin-top:0px;
+    }
+    .formLabel{
+      &{
+        font-size:18px;
+        color: #4a4a4a;
+        line-height: 50px;
+        flex-basis: 60px;
+        .display_box;
+        margin-right:15px;
+      }
+      i{
+        font-style: normal;
+        flex: 1;
+        text-align: center;
+      }
+      i:nth-of-type(1){
+        text-align: left;
+      }
+      i:nth-of-type(3){
+        text-align: right;
+      }
+    }
+    .inputWrap{
+      flex: 1;
+    }
+    .formInput{
+      &{
+        border:none;
+        background-color:#ffffff;
+        color: #4a4a4a;
+        font-size:18px;
+        .h_line_h(48px);
+        width:100%;
+        display: block;
+      }
+      &.disabled{
+        color: #878787;
+      }
+    }
+    .codeVerify{
+      &{
+        .h_line_h(32px);
+        border-radius:5px;
+        background-color: #4790ef;
+        border: none;
+        color: #ffffff;
+        padding: 0px 10px;
+        margin-top:8px;
+      }
+      &.disabled{
+        background-color: #d0d0d0;
+      }
+    }
+    .formLink{
+      flex: 1;
+      font-size:18px;
+      color: #5291d7;
+      line-height: 50px;
+      background:url("../images/link_bg.png") no-repeat right center;
+    }
+  }
+  .submitBtn{
+    &{
+      width:80%;
+      height: 50px;
+      background-color: #ff726c;
+      font-size:18px;
+      color: #ffffff;
+      border:none;
+      display: block;
+      margin: 0px auto;
+      border-radius: 5px;
+    }
+    &.bangka{
+      margin-top:87px;
+    }
+  }
+}
+/* 媒体查询 begin */
+@media screen and @iphone4Query {
+
+}
+/* 媒体查询 end */
