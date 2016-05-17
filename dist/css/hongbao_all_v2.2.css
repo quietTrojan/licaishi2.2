@@ -673,6 +673,9 @@ table {
   .bangka_body .submitBtn.bangka {
     margin-top: 10px;
   }
+  .yzsjh_body .formInput.code {
+    font-size: 14px;
+  }
 }
 /* 媒体查询 end */
 /* 购买记录私有css文件 */
