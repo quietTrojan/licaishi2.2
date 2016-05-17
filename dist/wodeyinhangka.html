@@ -25,7 +25,14 @@
                     <img src="images/kuaijiezhifu.png"/>
                 </div>
             </div>
-            <a href="javascript:;" class="unBind">解除绑定</a>
+            <a href="javascript:;" data-skip-url="http://www.baidu.com" class="unBind" id="unBind">解除绑定</a>
+            <script type="text/javascript">
+                $('#unBind').on('click',function(){
+                    if(window.confirm('确认解除绑定吗？')){
+                        location.assign($(this).data('skipUrl'));
+                    }
+                });
+            </script>
         </div>
     </div>
 </body>
