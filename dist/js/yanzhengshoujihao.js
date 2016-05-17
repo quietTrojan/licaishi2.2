@@ -23,6 +23,52 @@ $(function(){
         if($(this).hasClass('disabled')){
             return;
         }
+        $('#code_errorTip').text('');
+        $.ajax({
+            url: "/fp/luckym/resendsms",
+            method: "get",
+            data: {
+                'merchantNo':$('#merchantNo').val()
+            },
+            dataType: "text",
+            success:function(returnVal){
+                if(returnVal != '00'){
+                    $('#code_errorTip').text('短信验证码发送失败!');
+                }
+            }
+        });
         codeCountDown();
+    });
+    $('#submitBtn').on('click',function(){
+        var checkCode=$('#checkCode');
+        var merchantNo=$('#merchantNo');
+        if(/^\s*$/.test(checkCode.val())){
+            $('#code_errorTip').text('验证码不能为空!');
+            return;
+        }
+        if($(this).data('ajaxLock')){
+           return;
+        }
+        $(this).data('ajaxLock',true);
+        $.ajax({
+            url: "/fp/luckym/confim",
+            method: "get",
+            data: {
+                'checkCode':checkCode.val(),
+                'merchantNo':checkCode.val()
+            },
+            dataType: "text",
+            success:function(returnVal){
+                if(returnVal == '00'){
+                    location.assign('');
+                }else{
+                    alert(returnVal);
+                }
+                $(this).data('ajaxLock',false);
+            },
+            error:function(){
+                $(this).data('ajaxLock',false);
+            }
+        });
     });
 });

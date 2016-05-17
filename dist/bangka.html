@@ -8,37 +8,48 @@
 
     <link rel="stylesheet" href="css/hongbao_all_v2.2.css">
     <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
-    <script type="text/javascript" src="js/zhichideyinhang.js"></script>
+    <script type="text/javascript" src="js/bangka.js"></script>
 
     <title>填写银行卡信息</title>
 </head>
 <body class="bangka_body">
     <div class="mainBox">
         <h3 class="title_h3">请绑定理财师本人的银行卡</h3>
-        <div class="formBox">
+        <div class="formBox" id="formBox">
             <div class="formGroup">
                 <label class="formLabel"><i>持</i><i>卡</i><i>人</i></label>
                 <div class="inputWrap">
                     <input type="text" class="formInput disabled" value="张小苗" disabled="true"/>
                 </div>
             </div>
+            <p class="error_p"></p>
             <div class="formGroup">
                 <label class="formLabel"><i>卡</i><i>类</i><i>型</i></label>
-                <a href="javascript:;" class="formLink">工商银行 储蓄卡</a>
+                <a href="javascript:;" class="formLink" data-has-bank="true" id="bankType">工商银行 储蓄卡</a>
             </div>
+            <p class="error_p"></p>
             <div class="formGroup">
                 <label class="formLabel"><i>卡</i><i></i><i>号</i></label>
                 <div class="inputWrap">
-                    <input type="text" class="formInput" value="4326 2273 3333 888"/>
+                    <input type="text" class="formInput" value="" placeholder="请输入银行卡号" id="bankNum" />
                 </div>
             </div>
+            <p class="error_p"></p>
             <div class="formGroup">
                 <label class="formLabel"><i>手</i><i>机</i><i>号</i></label>
                 <div class="inputWrap">
-                    <input type="text" class="formInput" placeholder="请输入银行预留手机号" />
+                    <input type="text" class="formInput" placeholder="请输入银行预留手机号" id="bankMobile"/>
                 </div>
             </div>
-            <input type="button" class="submitBtn bangka" value="下一步"/>
+            <p class="error_p"></p>
+            <div class="formGroup">
+                <label class="formLabel"><i>身</i><i>份</i><i>证</i></label>
+                <div class="inputWrap">
+                    <input type="text" class="formInput" placeholder="请输入身份证号" id="idcard"/>
+                </div>
+            </div>
+            <p class="error_p"></p>
+            <input type="button" class="submitBtn bangka" value="下一步" id="submitBtn" />
         </div>
     </div>
 </body>

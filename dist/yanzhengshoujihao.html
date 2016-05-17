@@ -12,19 +12,21 @@
 
     <title>验证手机号</title>
 </head>
-<body class="bangka_body">
+<body class="yzsjh_body">
 <div class="mainBox">
     <div class="formBox mobile">
         <div class="formGroup">
             <label class="formLabel"><i>手</i><i>机</i><i>号</i></label>
-            <input type="text" class="formInput" value="13269179945"/>
+            <input type="text" class="formInput" value="13269179945" disabled="disabled" id="mobileInput"/>
         </div>
+        <p class="error_p"></p>
         <div class="formGroup">
             <label class="formLabel"><i>验</i><i>证</i><i>码</i></label>
-            <input type="text" class="formInput" placeholder="短信验证码"/>
+            <input type="text" class="formInput" placeholder="短信验证码" id="checkCode"/>
             <input type="button" class="codeVerify" id="codeVerify" value="重新获取"/>
         </div>
-        <input type="button" class="submitBtn bangka" value="下一步"/>
+        <p class="error_p" id="code_errorTip"></p>
+        <input type="button" class="submitBtn bangka" value="下一步" id="submitBtn" data-ajax-lock="false" />
     </div>
 </div>
 </body>

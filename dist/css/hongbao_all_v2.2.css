@@ -507,22 +507,27 @@ table {
 /* 媒体查询 begin */
 /* 媒体查询 end */
 /* 购买记录私有css文件 */
-.bangka_body {
+.bangka_body,
+.yzsjh_body {
   background-color: #EEEEEE;
 }
-.bangka_body .mainBox {
+.bangka_body .mainBox,
+.yzsjh_body .mainBox {
   padding: 0px 5%;
 }
-.bangka_body .title_h3 {
+.bangka_body .title_h3,
+.yzsjh_body .title_h3 {
   font-weight: normal;
   color: #4a4a4a;
   font-size: 18px;
   padding: 20px 0px 30px 0px;
 }
-.bangka_body .formBox.mobile {
+.bangka_body .formBox.mobile,
+.yzsjh_body .formBox.mobile {
   margin-top: 35px;
 }
-.bangka_body .formGroup {
+.bangka_body .formGroup,
+.yzsjh_body .formGroup {
   display: box;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -539,16 +544,14 @@ table {
   border-radius: 3px;
   background-color: #fff;
   padding: 0px 10px;
-  margin-top: 20px;
   overflow-x: hidden;
 }
-.bangka_body .formGroup > * {
+.bangka_body .formGroup > *,
+.yzsjh_body .formGroup > * {
   display: block;
 }
-.bangka_body .formGroup:first-child {
-  margin-top: 0px;
-}
-.bangka_body .formGroup .formLabel {
+.bangka_body .formGroup .formLabel,
+.yzsjh_body .formGroup .formLabel {
   font-size: 18px;
   color: #4a4a4a;
   line-height: 50px;
@@ -567,10 +570,12 @@ table {
   -webkit-flex-direction: raw;
   margin-right: 15px;
 }
-.bangka_body .formGroup .formLabel > * {
+.bangka_body .formGroup .formLabel > *,
+.yzsjh_body .formGroup .formLabel > * {
   display: block;
 }
-.bangka_body .formGroup .formLabel i {
+.bangka_body .formGroup .formLabel i,
+.yzsjh_body .formGroup .formLabel i {
   font-style: normal;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -578,19 +583,23 @@ table {
           flex: 1;
   text-align: center;
 }
-.bangka_body .formGroup .formLabel i:nth-of-type(1) {
+.bangka_body .formGroup .formLabel i:nth-of-type(1),
+.yzsjh_body .formGroup .formLabel i:nth-of-type(1) {
   text-align: left;
 }
-.bangka_body .formGroup .formLabel i:nth-of-type(3) {
+.bangka_body .formGroup .formLabel i:nth-of-type(3),
+.yzsjh_body .formGroup .formLabel i:nth-of-type(3) {
   text-align: right;
 }
-.bangka_body .formGroup .inputWrap {
+.bangka_body .formGroup .inputWrap,
+.yzsjh_body .formGroup .inputWrap {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
-.bangka_body .formGroup .formInput {
+.bangka_body .formGroup .formInput,
+.yzsjh_body .formGroup .formInput {
   border: none;
   background-color: #ffffff;
   color: #4a4a4a;
@@ -600,10 +609,12 @@ table {
   width: 100%;
   display: block;
 }
-.bangka_body .formGroup .formInput.disabled {
+.bangka_body .formGroup .formInput.disabled,
+.yzsjh_body .formGroup .formInput.disabled {
   color: #878787;
 }
-.bangka_body .formGroup .codeVerify {
+.bangka_body .formGroup .codeVerify,
+.yzsjh_body .formGroup .codeVerify {
   height: 32px;
   line-height: 32px;
   border-radius: 5px;
@@ -613,10 +624,12 @@ table {
   padding: 0px 10px;
   margin-top: 8px;
 }
-.bangka_body .formGroup .codeVerify.disabled {
+.bangka_body .formGroup .codeVerify.disabled,
+.yzsjh_body .formGroup .codeVerify.disabled {
   background-color: #d0d0d0;
 }
-.bangka_body .formGroup .formLink {
+.bangka_body .formGroup .formLink,
+.yzsjh_body .formGroup .formLink {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
@@ -626,7 +639,15 @@ table {
   line-height: 50px;
   background: url("../images/link_bg.png") no-repeat right center;
 }
-.bangka_body .submitBtn {
+.bangka_body .error_p,
+.yzsjh_body .error_p {
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  color: #ff0000;
+}
+.bangka_body .submitBtn,
+.yzsjh_body .submitBtn {
   width: 80%;
   height: 50px;
   background-color: #ff726c;
@@ -637,10 +658,19 @@ table {
   margin: 0px auto;
   border-radius: 5px;
 }
-.bangka_body .submitBtn.bangka {
-  margin-top: 87px;
+.bangka_body .submitBtn.bangka,
+.yzsjh_body .submitBtn.bangka {
+  margin-top: 67px;
 }
 /* 媒体查询 begin */
+@media screen and (max-width: 320px) {
+  .bangka_body .title_h3 {
+    padding-bottom: 20px;
+  }
+  .bangka_body .submitBtn.bangka {
+    margin-top: 10px;
+  }
+}
 /* 媒体查询 end */
 /* 购买记录私有css文件 */
 .myBankCard_body {

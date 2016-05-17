@@ -5,7 +5,7 @@ function resetForm(){
     $(this).find('.error_p').hide();
     $(this).find('.formInput').val('');
     $(this).find('.totalVal').removeClass('valid').text('¥0.00');
-    $(this).find('.submitBtn').addClass('disabled');
+    $(this).find('.submitBtn');
 }
 /**
  * 验证输入数字的合法性，是否为正整数
@@ -28,15 +28,66 @@ function validNumer(str){
     if(returnObj.valid){
         returnObj.val = tmpNum;
     }
-    //console.log('returnObj',returnObj);
     return returnObj;
 }
+function inputVerify(){
+    var flag=true;
+    var inputVal=$(this).val();
+    var inputWrap=$(this).parents('.inputWrap:first');
+    var curLabel=inputWrap.children('div:eq(0)').text();
+    var errorP=inputWrap.next('.error_p');
+
+    if(/^\s*$/.test(inputVal)){
+        errorP.text(curLabel+'不能为空！').show();
+        flag=false;
+    }else if(!validNumer(inputVal).valid){
+        errorP.text(curLabel+'必须为正整数！').show();
+        flag=false;
+    }
+    return flag;
+}
+function formVerify(curTabItem){
+    var flag=true;
+    var curIndex=curTabItem.index();
+    var numInput=curTabItem.find('.num');
+    var sumInput=curTabItem.find('.sum');
+
+    curTabItem.find('.error_p').hide();
+    flag=inputVerify.apply(numInput.get(0));
+    if(!flag){
+        return flag;
+    }
+    flag=inputVerify.apply(sumInput.get(0));
+    if(!flag){
+        return flag;
+    }
+    if(curIndex==0){
+        if(sumInput.val()>200){
+            sumInput.parents('.inputWrap:first').next('.error_p').text('单个金额不能超过200元！').show();
+            flag=false;
+        }
+    }else if(curIndex==1){
+        if(sumInput.val()>numInput.val()*200){
+            sumInput.parents('.inputWrap:first').next('.error_p').text('总金额不能超过'+numInput.val()*200+'元！').show();
+            flag=false;
+        }
+    }
+    return flag;
+}
+function formSubmit(numInput,sumInput,curIndex){
+    var formBox=$('#formBox');
+    formBox.find('input[name="lmamount"]').val(numInput.val());
+    formBox.find('input[name="lmoney"]').val(sumInput.val());
+    formBox.find('input[name="lmtype"]').val(curIndex);
+    formBox.submit();
+}
 $(function(){
-    var tabTitle=$('#tabTitle'),
-        tabItem_list=$('#tabContBox .tabItem'),
-        curTabItem=tabItem_list.eq($(this).index());
+    var tabTitle=$('#tabTitle');
+    var tabItem_list=$('#tabContBox .tabItem');
+    var tabContBox=$('#tabContBox');
 
     tabTitle.on('click','li',function(){
+        var curTabItem=tabItem_list.eq($(this).index());
         if($(this).hasClass('active')){
             return;
         }
@@ -48,42 +99,45 @@ $(function(){
         curTabItem.show();
     });
 
-    tabItem_list.each(function(){
-        var numInput=$(this).find('.num'),
-            sumInput=$(this).find('.sum'),
-            submitBtn=$(this).find('.submitBtn'),
-            totalVal=$(this).find('.totalVal');
+    tabContBox.on('input','.formInput',function(){
+        var curTabItem=$(this).parents('.tabItem:first');
+        var curIndex=curTabItem.index();
+        var numInput=curTabItem.find('.num');
+        var sumInput=curTabItem.find('.sum');
+        var totalVal=curTabItem.find('.totalVal');
 
-        numInput.add(sumInput).on('input',function(){
-            var valStr= '¥',
-                numValidObj=validNumer(numInput.val()),
-                sumValidObj=validNumer(sumInput.val())
-                validFlag=false;
+        var valPrefix= '¥';
+        var valStr= '¥';
+        var numValidObj=validNumer(numInput.val());
+        var sumValidObj=validNumer(sumInput.val());
+        var validFlag=false;
 
+        if(curIndex==0){
             validFlag=numValidObj.valid && sumValidObj.valid;
-            if(validFlag){
-                valStr=valStr+(numValidObj.val*sumValidObj.val).toFixed(2);
-                totalVal.addClass('valid');
-                if(sumValidObj.val <= 200){
-                    submitBtn.removeClass('disabled');
-                }else{
-                    submitBtn.addClass('disabled');
-                }
-            }else{
-                valStr=valStr+'0.00';
-                totalVal.removeClass('valid');
-                submitBtn.addClass('disabled');
-            }
-            totalVal.text(valStr);
-        });
+            valStr=(numValidObj.val*sumValidObj.val).toFixed(2);
+        }else{
+            validFlag=sumValidObj.valid;
+            valStr=sumValidObj.val.toFixed(2);
+        }
 
-        submitBtn.on('click',function(){
-            if($(this).hasClass('disabled')){
-                return;
-            }else{
-                alert('提交表单!');
-            }
-        });
+        if(validFlag){
+            totalVal.addClass('valid');
+        }else{
+            valStr='0.00';
+            totalVal.removeClass('valid');
+        }
+        totalVal.text(valPrefix+valStr);
+    });
+
+    tabContBox.on('click','.submitBtn',function(){
+        var curTabItem=$(this).parents('.tabItem:first');
+        var curIndex=curTabItem.index();
+        var numInput=curTabItem.find('.num');
+        var sumInput=curTabItem.find('.sum');
+
+        if(formVerify(curTabItem)){
+            formSubmit(numInput,sumInput,curIndex);
+        }
 
     });
 });
