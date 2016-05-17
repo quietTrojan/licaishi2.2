@@ -652,6 +652,10 @@ table {
   font-size: 12px;
   color: #ff0000;
 }
+.bangka_body .error_p.suc,
+.yzsjh_body .error_p.suc {
+  color: green;
+}
 .bangka_body .submitBtn,
 .yzsjh_body .submitBtn {
   width: 80%;

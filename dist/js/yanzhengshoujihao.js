@@ -33,7 +33,9 @@ $(function(){
             dataType: "text",
             success:function(returnVal){
                 if(returnVal != '00'){
-                    $('#code_errorTip').text('短信验证码发送失败!');
+                    $('#code_errorTip').removeClass('suc').text('短信验证码发送失败!');
+                }else{
+                    $('#code_errorTip').addClass('suc').text('短信验证码发送成功!');
                 }
             }
         });
