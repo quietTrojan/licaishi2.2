@@ -2,7 +2,7 @@
  * 重置表单元素
  */
 function resetForm(){
-    $(this).find('.error_p').hide();
+    $(this).find('.error_p').text('');
     $(this).find('.formInput').val('');
     $(this).find('.totalVal').removeClass('valid').text('¥0.00');
     $(this).find('.submitBtn');
@@ -35,13 +35,13 @@ function inputVerify(){
     var inputVal=$(this).val();
     var inputWrap=$(this).parents('.inputWrap:first');
     var curLabel=inputWrap.children('div:eq(0)').text();
-    var errorP=inputWrap.next('.error_p');
+    var errorP=inputWrap.nextAll('.error_p:first');
 
     if(/^\s*$/.test(inputVal)){
-        errorP.text(curLabel+'不能为空！').show();
+        errorP.text(curLabel+'不能为空！');
         flag=false;
     }else if(!validNumer(inputVal).valid){
-        errorP.text(curLabel+'必须为正整数！').show();
+        errorP.text(curLabel+'必须为正整数！');
         flag=false;
     }
     return flag;
@@ -52,8 +52,15 @@ function formVerify(curTabItem){
     var numInput=curTabItem.find('.num');
     var sumInput=curTabItem.find('.sum');
 
-    curTabItem.find('.error_p').hide();
+    curTabItem.find('.error_p').text('');
     flag=inputVerify.apply(numInput.get(0));
+    if(!flag){
+        return flag;
+    }
+    if(numInput.val()>100){
+        numInput.parents('.inputWrap:first').nextAll('.error_p:first').text('红包个数必须是最小为1，最大为100');
+        flag=false;
+    }
     if(!flag){
         return flag;
     }
@@ -63,12 +70,12 @@ function formVerify(curTabItem){
     }
     if(curIndex==0){
         if(sumInput.val()>200){
-            sumInput.parents('.inputWrap:first').next('.error_p').text('单个金额不能超过200元！').show();
+            sumInput.parents('.inputWrap:first').nextAll('.error_p:first').text('单个金额不能超过200元！');
             flag=false;
         }
     }else if(curIndex==1){
         if(sumInput.val()>numInput.val()*200){
-            sumInput.parents('.inputWrap:first').next('.error_p').text('总金额不能超过'+numInput.val()*200+'元！').show();
+            sumInput.parents('.inputWrap:first').nextAll('.error_p:first').text('总金额不能超过'+numInput.val()*200+'元！');
             flag=false;
         }
     }
@@ -79,7 +86,7 @@ function formSubmit(numInput,sumInput,curIndex){
     formBox.find('input[name="lmamount"]').val(numInput.val());
     formBox.find('input[name="lmoney"]').val(sumInput.val());
     formBox.find('input[name="lmtype"]').val(curIndex);
-    formBox.submit();
+    //formBox.submit();
 }
 $(function(){
     var tabTitle=$('#tabTitle');
