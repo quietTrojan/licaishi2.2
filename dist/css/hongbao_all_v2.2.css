@@ -216,6 +216,9 @@ table {
 }
 /* 媒体查询 end */
 /* 红包页面私有css文件 */
+.hongbao_body .tabBox {
+  padding-bottom: 20px;
+}
 .hongbao_body .tabTitle {
   font-size: 0px;
   text-align: center;
