@@ -26,14 +26,17 @@
                 </div>
             </div>
             <a href="javascript:;" data-skip-url="http://www.baidu.com" class="unBind" id="unBind">解除绑定</a>
-            <script type="text/javascript">
-                $('#unBind').on('click',function(){
-                    if(window.confirm('确认解除绑定吗？')){
-                        location.assign($(this).data('skipUrl'));
-                    }
-                });
-            </script>
         </div>
     </div>
+    <!-- 确认取消美化弹层 begin -->
+    <div class="maskDiv" id="maskDiv"></div>
+    <div class="confirmPop" id="confirmPop">
+        <div class="tipText">您确定解除当前银行卡的绑定吗？</div>
+        <div class="btnBox">
+            <input type="button" value="确认"/>
+            <input type="button" value="取消"/>
+        </div>
+    </div>
+    <!-- 确认取消美化弹层 end -->
 </body>
 </html>

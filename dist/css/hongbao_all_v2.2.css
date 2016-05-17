@@ -750,5 +750,62 @@ table {
   display: block;
   text-align: center;
 }
+.myBankCard_body .maskDiv {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: none;
+}
+.myBankCard_body .confirmPop {
+  border: 1px solid #C2C2C2;
+  border-radius: 10px;
+  width: 88%;
+  position: fixed;
+  left: 6%;
+  top: 50%;
+  margin-top: -79px;
+  background-color: #ffffff;
+  z-index: 1001;
+  display: none;
+}
+.myBankCard_body .confirmPop .tipText {
+  height: 90px;
+  line-height: 90px;
+  color: #8B8B8B;
+  font-size: 12px;
+  text-align: center;
+}
+.myBankCard_body .confirmPop .btnBox {
+  padding-bottom: 25px;
+  text-align: center;
+  font-size: 0px;
+}
+.myBankCard_body .confirmPop .btnBox > * {
+  display: inline-block;
+  font-size: 12px;
+  vertical-align: top;
+}
+.myBankCard_body .confirmPop .btnBox input[type="button"] {
+  font-size: 14px;
+  width: 120px;
+  height: 40px;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.myBankCard_body .confirmPop .btnBox input[type="button"]:nth-of-type(1) {
+  background-color: #F25858;
+  color: #fff;
+}
+.myBankCard_body .confirmPop .btnBox input[type="button"]:nth-of-type(2) {
+  color: #4B4B4B;
+  background-color: #fff;
+  border: 1px solid #A1A1A1;
+  margin-left: 20px;
+}
 /* 媒体查询 begin */
 /* 媒体查询 end */
