@@ -325,9 +325,11 @@ table {
 .hongbao_body .tabContBox .totalVal {
   font-size: 36px;
   color: #9B9B9B;
-  height: 146px;
-  line-height: 146px;
+  padding: 48px 0px;
   text-align: center;
+  white-space: normal;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 .hongbao_body .tabContBox .totalVal.valid {
   color: #FF726C;
@@ -349,8 +351,7 @@ table {
 /* 媒体查询 begin */
 @media screen and (max-width: 320px) {
   .hongbao_body .tabContBox .totalVal {
-    height: 90px;
-    line-height: 90px;
+    padding: 20px 0px;
   }
 }
 /* 媒体查询 end */
