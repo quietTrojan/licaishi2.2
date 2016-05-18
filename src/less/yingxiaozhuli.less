@@ -36,7 +36,8 @@
       border-top-right-radius: 5px;
       margin:0px auto;
       box-sizing: border-box;
-      padding-top:85px;
+      .display_box(column);
+      justify-content: center;
     }
     >a{
       &{
@@ -47,6 +48,7 @@
         font-size:18px;
         text-align: center;
         margin:0px auto;
+
       }
       &:nth-of-type(1){
         background-color: #FF726C;
@@ -64,16 +66,7 @@
 /* 媒体查询 begin */
 @media screen and @iphone4Query {
   .yxzl_body{
-    .hbInner{
-      &{
-        padding-top:35px;
-      }
-      >a{
-        &:nth-of-type(2){
-          margin-top:20px;
-        }
-      }
-    }
+    
   }
 }
 /* 媒体查询 end */
