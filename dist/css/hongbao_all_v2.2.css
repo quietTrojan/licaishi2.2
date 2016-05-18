@@ -277,9 +277,7 @@ table {
   padding-left: 10px;
   color: #878787;
   background-color: red;
-  -webkit-flex-basis: 82px;
-      -ms-flex-preferred-size: 82px;
-          flex-basis: 82px;
+  width: 82px;
 }
 .hongbao_body .tabContBox .inputWrap div:nth-of-type(2) {
   -webkit-box-flex: 1;
@@ -292,9 +290,7 @@ table {
   color: #4F4F4F;
   padding-right: 10px;
   background-color: blue;
-  -webkit-flex-basis: 28px;
-      -ms-flex-preferred-size: 28px;
-          flex-basis: 28px;
+  width: 28px;
 }
 .hongbao_body .tabContBox .inputWrap .formInput {
   height: 40px;
