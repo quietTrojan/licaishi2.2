@@ -431,6 +431,12 @@ table {
 .yxzl_body .hbInner > * {
   display: block;
 }
+.yxzl_body .hbInner p {
+  padding-bottom: 20px;
+  color: #FF726C;
+  text-align: center;
+  font-size: 18px;
+}
 .yxzl_body .hbInner > a {
   display: block;
   width: 83%;
@@ -460,6 +466,14 @@ table {
 }
 /* 媒体查询 begin */
 @media screen and (max-width: 320px) {
+  .yxzl_body .title_h3 {
+    height: 70px;
+    line-height: 70px;
+  }
+  .yxzl_body .hbInner > a {
+    height: 40px;
+    line-height: 40px;
+  }
   .yxzl_body .hbInner > a:nth-of-type(2) {
     margin-top: 20px;
   }
