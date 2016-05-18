@@ -89,6 +89,9 @@ function formSubmit(numInput,sumInput,curIndex){
     //formBox.submit();
 }
 $(function(){
+    //清除缓存的表单元素
+    $('.formInput').val('');
+
     var tabTitle=$('#tabTitle');
     var tabItem_list=$('#tabContBox .tabItem');
     var tabContBox=$('#tabContBox');
