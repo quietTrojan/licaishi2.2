@@ -1,14 +1,4 @@
-/**
- * textarea自适应高度
- */
-function textAreaAutoHeight(){
-    var _this=this;
-    $(this).height(0);
-    setTimeout(function(){
-        var scrollHeight=_this.scrollHeight;
-        $(_this).height(scrollHeight);
-    },0)
-}
+
 /**
  * 重置表单元素
  */
@@ -163,7 +153,4 @@ $(function(){
 
     });
 
-    $('.formTextArea').each(function(){
-        textAreaAutoHeight.apply(this,[]);
-    });
 });

@@ -14,7 +14,7 @@ function handleError(err) {
 
 //定义一个testLess任务（自定义任务名称）
 gulp.task('less_css', function () {
-    return gulp.src(['src/less/hongbao_all_v2.2.less']) //该任务针对的文件
+    return gulp.src(['src/less/hongbao_all_v2.2.less','src/less/test.less']) //该任务针对的文件
         .pipe(less()).on('error', handleError)
         .pipe(prefix()).on('error', handleError)
         .pipe(gulp.dest('dist/css/'));

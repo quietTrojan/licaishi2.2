@@ -20,7 +20,8 @@ li {
 }
 input[type="text"],
 input[type="tel"],
-input[type="number"] {
+input[type="number"],
+input[type="button"] {
   outline: none;
   border: none;
 }
@@ -78,6 +79,91 @@ table {
   height: 0px;
 }
 /* css 重置 end */
+/* 全站通用样式 begin */
+.maskDiv {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: none;
+}
+.loadingBox {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+.loadingBox .inner {
+  text-align: center;
+  height: 52px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  margin-top: -26px;
+}
+.loadingBox .inner .icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: url("../images/loading.gif") no-repeat;
+  vertical-align: top;
+}
+.loadingBox .inner .tip_p {
+  height: 20px;
+  line-height: 20px;
+  color: #fff;
+}
+.confirmPop {
+  width: 84%;
+  background-color: #fff;
+  position: fixed;
+  z-index: 1001;
+  left: 8%;
+  top: 50%;
+  border-radius: 10px;
+}
+.confirmPop .tipCont .reuse_tip {
+  padding: 20px;
+  text-align: center;
+}
+.confirmPop .tipCont .reuse_tip span {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  font-size: 16px;
+}
+.confirmPop .btnBox {
+  padding-bottom: 30px;
+  text-align: center;
+}
+.confirmPop .btnBox input[type="button"] {
+  vertical-align: top;
+  width: 128px;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+.confirmPop .btnBox input[type="button"]:nth-of-type(2) {
+  margin-left: 20px;
+}
+.confirmPop .btnBox input[type="button"].okBtn {
+  background-color: #F25858;
+  color: #fff;
+}
+.confirmPop .btnBox input[type="button"].cancelBtn {
+  color: #4B4B4B;
+  background-color: #fff;
+  border: 1px solid #A1A1A1;
+}
+/* 全站通用样式 end */
 /* 购买成功私有css文件 */
 .gmcg_body {
   background-color: #f8d39a;
@@ -344,7 +430,6 @@ table {
   border-radius: 3px;
   display: block;
   width: 100%;
-  height: 80px;
   color: #878787;
   font-size: 18px;
   box-sizing: border-box;
@@ -815,16 +900,6 @@ table {
   color: #ff726c;
   display: block;
   text-align: center;
-}
-.myBankCard_body .maskDiv {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1000;
-  display: none;
 }
 .myBankCard_body .confirmPop {
   border: 1px solid #C2C2C2;
