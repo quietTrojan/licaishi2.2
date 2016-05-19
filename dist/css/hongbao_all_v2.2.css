@@ -391,7 +391,6 @@ table {
           flex: 1;
   -webkit-flex: 1;
   background-color: yellow;
-  width: 0px;
 }
 .hongbao_body .tabContBox .inputWrap div:nth-of-type(3) {
   color: #4F4F4F;
