@@ -385,7 +385,7 @@ table {
 }
 .hongbao_body .tabContBox .inputWrap .formInput {
   height: 40px;
-  line-height: 40px;
+  line-height: 24px;
   border: none;
   box-sizing: border-box;
   display: block;
