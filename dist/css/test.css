@@ -8,12 +8,9 @@
 }
 .test_body .testDiv div {
   height: 50px;
-  width: 0px;
 }
 .test_body .testDiv div:nth-of-type(1) {
-  -webkit-flex-basis: 40px;
-      -ms-flex-preferred-size: 40px;
-          flex-basis: 40px;
+  width: 40px;
   background-color: red;
 }
 .test_body .testDiv div:nth-of-type(2) {
@@ -24,8 +21,6 @@
   background-color: yellow;
 }
 .test_body .testDiv div:nth-of-type(3) {
-  -webkit-flex-basis: 60px;
-      -ms-flex-preferred-size: 60px;
-          flex-basis: 60px;
+  width: 60px;
   background-color: blue;
 }
