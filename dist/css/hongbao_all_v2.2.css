@@ -356,43 +356,53 @@ table {
   display: block;
 }
 .hongbao_body .tabContBox .inputWrap {
+  display: box;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-.hongbao_body .tabContBox .inputWrap div {
+  display: -webkit-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: raw;
+          flex-direction: raw;
+  -webkit-flex-direction: raw;
+  border: 1px solid rgba(151, 151, 151, 0.4);
+  border-radius: 3px;
   height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+}
+.hongbao_body .tabContBox .inputWrap > * {
+  display: block;
+}
+.hongbao_body .tabContBox .inputWrap:nth-of-type(2) {
+  margin-top: 25px;
 }
 .hongbao_body .tabContBox .inputWrap div:nth-of-type(1) {
+  padding-left: 10px;
   color: #878787;
-  background-color: red;
-  width: 82px;
 }
 .hongbao_body .tabContBox .inputWrap div:nth-of-type(2) {
   -webkit-box-flex: 1;
-  -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background-color: yellow;
+  -webkit-flex: 1;
 }
 .hongbao_body .tabContBox .inputWrap div:nth-of-type(3) {
   color: #4F4F4F;
-  background-color: blue;
-  width: 28px;
+  padding-right: 10px;
 }
 .hongbao_body .tabContBox .inputWrap .formInput {
-  display: none;
   height: 40px;
-  line-height: 24px;
+  line-height: 40px;
   border: none;
   box-sizing: border-box;
+  display: block;
   text-align: right;
-  padding: 8px 10px 8px 0px;
+  padding-right: 10px;
   width: 100%;
   font-size: 18px;
   color: #F15858;
-  background-color: yellow;
 }
 .hongbao_body .tabContBox .inputWrap .formInput::-webkit-input-placeholder {
   color: #878787;
