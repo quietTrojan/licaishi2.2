@@ -1,4 +1,15 @@
 /**
+ * textarea自适应高度
+ */
+function textAreaAutoHeight(){
+    var _this=this;
+    $(this).height(0);
+    setTimeout(function(){
+        var scrollHeight=_this.scrollHeight;
+        $(_this).height(scrollHeight);
+    },0)
+}
+/**
  * 重置表单元素
  */
 function resetForm(){
@@ -17,7 +28,7 @@ function validNumer(str){
         'val':0,
         'valid':true
     };
-    if(isNaN(str)){
+    if(isNaN(str) || /^\s*0.*/.test(str)){
         returnObj.valid=false;
     }else{
         tmpNum=parseInt(str);
@@ -144,10 +155,15 @@ $(function(){
         var curIndex=curTabItem.index();
         var numInput=curTabItem.find('.num');
         var sumInput=curTabItem.find('.sum');
+        var wishesInput=curTabItem.find('.formTextArea');
 
         if(formVerify(curTabItem)){
-            formSubmit(numInput,sumInput,curIndex);
+            formSubmit(numInput,sumInput,wishesInput,curIndex);
         }
 
+    });
+
+    $('.formTextArea').each(function(){
+        textAreaAutoHeight.apply(this,[]);
     });
 });
