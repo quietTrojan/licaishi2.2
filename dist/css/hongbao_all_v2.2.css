@@ -366,10 +366,7 @@ table {
       -ms-flex-direction: raw;
           flex-direction: raw;
   -webkit-flex-direction: raw;
-  border: 1px solid rgba(151, 151, 151, 0.4);
   border-radius: 3px;
-  height: 40px;
-  line-height: 40px;
   font-size: 18px;
   box-sizing: border-box;
 }
@@ -377,7 +374,7 @@ table {
   display: block;
 }
 .hongbao_body .tabContBox .inputWrap div {
-  box-sizing: border-box;
+  height: 40px;
 }
 .hongbao_body .tabContBox .inputWrap div:nth-of-type(1) {
   color: #878787;
@@ -386,9 +383,9 @@ table {
 }
 .hongbao_body .tabContBox .inputWrap div:nth-of-type(2) {
   -webkit-box-flex: 1;
+  -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  -webkit-flex: 1;
   background-color: yellow;
 }
 .hongbao_body .tabContBox .inputWrap div:nth-of-type(3) {
