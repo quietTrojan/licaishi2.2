@@ -368,7 +368,6 @@ table {
   -webkit-flex-direction: raw;
   border-radius: 3px;
   font-size: 18px;
-  box-sizing: border-box;
 }
 .hongbao_body .tabContBox .inputWrap > * {
   display: block;
