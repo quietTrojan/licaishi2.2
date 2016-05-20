@@ -19,6 +19,10 @@
             <li class="active">普通红包</li>
             <li>拼手气红包</li>
         </ul>
+        <div class="remainLimit">
+            <p>平台剩余可售额度<span>10900.00</span>元</p>
+            <p>您今日可购买额度<span>450.00</span>元</p>
+        </div>
         <div class="tabContBox" id="tabContBox">
             <div class="tabItem">
                 <div class="inputWrap">
@@ -40,7 +44,6 @@
                 <p class="error_p"></p>
                 <div class="formTextArea">丰厚投资福利，打造高品质生活，你的期盼无限，网信理财+帮你实现！</div>
                 <div class="totalVal">¥0.00</div>
-                <input type="button" class="submitBtn" value="确定购买" />
             </div>
             <div class="tabItem">
                 <div class="inputWrap">
@@ -62,14 +65,17 @@
                 <p class="error_p"></p>
                 <div class="formTextArea">丰厚投资福利，打造高品质生活，你的期盼无限，网信理财+帮你实现！</div>
                 <div class="totalVal">¥0.00</div>
-                <input type="button" class="submitBtn" value="确定购买" />
             </div>
+        </div>
+        <div class="btnBox">
+            <a href="javascript:;" class="protocol_link" id="protocol_link">红包代收代付协议</a>
+            <input type="button" class="submitBtn" value="同意协议并购买" />
         </div>
     </div>
     <form action="/fp/luckym/hb" method="POST" id="formBox" style="display: none;">
-        <input type="text" name="lmamount" value=""/>
-        <input type="text" name="lmoney" value="" />
-        <input type="text" name="wishes" value="" />
+        <input type="hidden" name="lmamount" value=""/>
+        <input type="hidden" name="lmoney" value="" />
+        <input type="hidden" name="wishes" value=""/>
         <input type="hidden" name="lmtype" value="">
     </form>
 </body>

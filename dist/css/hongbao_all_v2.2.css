@@ -321,6 +321,22 @@ table {
 }
 /* 媒体查询 end */
 /* 红包页面私有css文件 */
+.hongbao_body .remainLimit {
+  text-align: center;
+  padding: 20px 0px 30px 0px;
+}
+.hongbao_body .remainLimit p span {
+  color: #FF6E68;
+}
+.hongbao_body .remainLimit p:nth-of-type(1) {
+  font-size: 18px;
+  color: #9b9b9b;
+}
+.hongbao_body .remainLimit p:nth-of-type(2) {
+  font-size: 16px;
+  color: #404040;
+  padding-top: 10px;
+}
 .hongbao_body .tabBox {
   padding-bottom: 20px;
 }
@@ -347,7 +363,7 @@ table {
   color: #FF6E68;
 }
 .hongbao_body .tabContBox {
-  padding: 50px 10% 0px 10%;
+  padding: 0px 10% 0px 10%;
 }
 .hongbao_body .tabContBox .tabItem {
   display: none;
@@ -365,9 +381,6 @@ table {
   height: 40px;
   line-height: 40px;
   font-size: 18px;
-}
-.hongbao_body .tabContBox .inputWrap:nth-of-type(2) {
-  margin-top: 25px;
 }
 .hongbao_body .tabContBox .inputWrap div:nth-of-type(1) {
   padding-left: 10px;
@@ -423,7 +436,7 @@ table {
 .hongbao_body .tabContBox .totalVal {
   font-size: 36px;
   color: #9B9B9B;
-  padding: 48px 0px;
+  padding: 20px 0px 10px 0px;
   text-align: center;
   white-space: normal;
   word-break: break-all;
@@ -432,26 +445,32 @@ table {
 .hongbao_body .tabContBox .totalVal.valid {
   color: #FF726C;
 }
-.hongbao_body .tabContBox .submitBtn {
+.hongbao_body .btnBox {
+  text-align: center;
+  padding: 0px 10% 0px 10%;
+}
+.hongbao_body .btnBox > * {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hongbao_body .btnBox .protocol_link {
+  color: #aaaaaa;
+  font-size: 14px;
+  text-decoration: underline;
+  display: block;
+}
+.hongbao_body .btnBox .submitBtn {
   font-size: 18px;
   color: #fff;
-  display: block;
   width: 100%;
   height: 60px;
-  line-height: 60px;
   border-radius: 5px;
   border: none;
   background-color: #FF726C;
-}
-.hongbao_body .tabContBox .submitBtn.disabled {
-  background-color: rgba(255, 114, 108, 0.62);
+  margin-top: 20px;
 }
 /* 媒体查询 begin */
-@media screen and (max-width: 320px) {
-  .hongbao_body .tabContBox .totalVal {
-    padding: 20px 0px;
-  }
-}
 /* 媒体查询 end */
 /* 营销助理私有css文件 */
 .yxzl_body {
