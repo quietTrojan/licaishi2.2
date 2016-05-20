@@ -470,6 +470,63 @@ table {
   background-color: #FF726C;
   margin-top: 20px;
 }
+.hongbao_body .tipPopBox {
+  position: fixed;
+  width: 88%;
+  left: 6%;
+  top: 50%;
+  background-color: #fff;
+  border-radius: 5px;
+  z-index: 1001;
+  display: none;
+}
+.hongbao_body .tipPopBox .title {
+  font-size: 14px;
+  color: #7F7F7F;
+  text-align: center;
+  padding: 20px 0px;
+}
+.hongbao_body .tipPopBox .cont {
+  padding: 0px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #7F7F7F;
+}
+.hongbao_body .tipPopBox .cont p {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  line-height: 30px;
+}
+.hongbao_body .tipPopBox .cont p span {
+  color: #FF9D99;
+}
+.hongbao_body .tipPopBox .btnBox {
+  padding: 25px 0px 20px 0px;
+  font-size: 0px;
+}
+.hongbao_body .tipPopBox .btnBox > * {
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: top;
+}
+.hongbao_body .tipPopBox .btnBox input {
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+}
+.hongbao_body .tipPopBox .btnBox input:nth-of-type(2) {
+  margin-left: 20px;
+}
+.hongbao_body .tipPopBox .btnBox .okBtn {
+  color: #fff;
+  background-color: #f15858;
+}
+.hongbao_body .tipPopBox .btnBox .cancelBtn {
+  color: #4B4B4B;
+  background-color: #fff;
+  border: 1px solid #A1A1A1;
+}
 /* 媒体查询 begin */
 /* 媒体查询 end */
 /* 营销助理私有css文件 */

@@ -1,4 +1,27 @@
-
+/**
+ * 显示弹框提示
+ * @param htmlStr
+ * @param title 如果不传入，默认是"购买失败"
+ */
+function showPopTip(htmlStr,title,callBack){
+    var tipPopBox=$('#tipPopBox');
+    var tip_text_p=tipPopBox.find('.cont p');
+    tip_text_p.html(htmlStr);
+    tipPopBox.css({
+        'margin-top':-tipPopBox.height()/2
+    });
+    if(typeof title =="undefined"){
+        title="购买失败"
+    }
+    if(typeof callBack !="undefined"){
+        callBack();
+    }
+    tipPopBox.find('.title').text(title);
+    $('#maskDiv').add(tipPopBox).show();
+}
+function hidePopTip(){
+    $('#maskDiv,#tipPopBox').hide();
+}
 /**
  * 重置表单元素
  */
@@ -82,14 +105,63 @@ function formVerify(curTabItem){
     }
     return flag;
 }
-function formSubmit(numInput,sumInput,curIndex){
-    var formBox=$('#formBox');
-    formBox.find('input[name="lmamount"]').val(numInput.val());
-    formBox.find('input[name="lmoney"]').val(sumInput.val());
-    formBox.find('input[name="lmtype"]').val(curIndex);
-    //formBox.submit();
+function limitVerify(totalVal){
+    var plat_limit=Number($('#plat_limit').text());//平台限额
+    var person_limit=Number($('#person_limit').text());;//个人限额
+    var person_dayLimit=Number($('#person_dayLimit').val());
+    var tipHtmlStr='';
+    var flag=false;
+
+    if(person_limit==0){
+        tipHtmlStr="您今日可购买额度已用完，明天再来。";
+    }else if(plat_limit==0){
+        tipHtmlStr="今日平台限额已用完，明日请早！";
+    }else if(totalVal>person_limit){
+        tipHtmlStr="您每日最高限额<span>"+person_dayLimit+"</span>元，当前剩余可用额度为<span>"+person_limit+"</span>元，请修改红包金额。";
+        flag=false;
+    }else if(totalVal>plat_limit){
+        tipHtmlStr="平台今日剩余额度为<span>"+plat_limit+"</span>元，请修改红包金额。";
+    }else{
+        flag=true;
+    }
+
+    if(!flag){
+        showPopTip(tipHtmlStr);
+    }
+    return flag;
 }
+function formSubmit(numInput,sumInput,wishesInput,curIndex){
+    showLoading();
+    $.ajax({
+        url: "/fp/luckym/hb",
+        method: "post",
+        data: {
+            "lmamount":numInput.val(),
+            "lmoney":sumInput.val(),
+            "wishes":wishesInput.text(),
+            'lmtype':curIndex
+        },
+        dataType: "text",
+        success:function(returnVal){
+            hideLoading();
+            if(returnVal == '00'){
+                showPopTip('购买成功，请点击确认!','购买成功',function(){
+                    location.assign('http://www.baidu.com');
+                });
+            }else{
+                showPopTip('服务端异常，请稍后重试!');
+            }
+        },
+        error:function(){
+            hideLoading();
+            showPopTip('服务端异常，请稍后重试!');
+        }
+    });
+}
+
 $(function(){
+
+
     //清除缓存的表单元素
     $('.formInput').val('');
 
@@ -137,20 +209,26 @@ $(function(){
             valStr='0.00';
             totalVal.removeClass('valid');
         }
-        totalVal.text(valPrefix+valStr);
+        totalVal.text(valPrefix+valStr).data('totalVal',valStr);
     });
 
-    tabContBox.on('click','.submitBtn',function(){
-        var curTabItem=$(this).parents('.tabItem:first');
+    //同意协议并购买
+    $('#submitBtn').on('click',function(){
+
+        var curTabItem=tabItem_list.eq(tabTitle.find('li.active').index());
         var curIndex=curTabItem.index();
         var numInput=curTabItem.find('.num');
         var sumInput=curTabItem.find('.sum');
         var wishesInput=curTabItem.find('.formTextArea');
+        var totalVal=Number(curTabItem.find('.totalVal').data('totalVal'));
 
-        if(formVerify(curTabItem)){
+        if(formVerify(curTabItem) && limitVerify(totalVal)){
             formSubmit(numInput,sumInput,wishesInput,curIndex);
         }
+    });
 
+    $('#tipPopBox .okBtn').on('click',function(){
+        hidePopTip();
     });
 
 });

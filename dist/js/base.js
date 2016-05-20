@@ -8,7 +8,7 @@ function showLoading(tipText){
     if(loadingBox.size()==0){
         loadingBox=$(htmlStr).appendTo($(document.body));
     }
-    if(typeof tipText != "undefined"){
+    if(typeof tipText == "undefined"){
         tipText="正在请求数据…";
     }
     loadingBox.find('.tip_p').text(tipText);
