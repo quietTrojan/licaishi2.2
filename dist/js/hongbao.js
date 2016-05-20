@@ -131,32 +131,12 @@ function limitVerify(totalVal){
     return flag;
 }
 function formSubmit(numInput,sumInput,wishesInput,curIndex){
-    showLoading();
-    $.ajax({
-        url: "/fp/luckym/hb",
-        method: "post",
-        data: {
-            "lmamount":numInput.val(),
-            "lmoney":sumInput.val(),
-            "wishes":wishesInput.text(),
-            'lmtype':curIndex
-        },
-        dataType: "text",
-        success:function(returnVal){
-            hideLoading();
-            if(returnVal == '00'){
-                showPopTip('购买成功，请点击确认!','购买成功',function(){
-                    location.assign('http://www.baidu.com');
-                });
-            }else{
-                showPopTip('服务端异常，请稍后重试!');
-            }
-        },
-        error:function(){
-            hideLoading();
-            showPopTip('服务端异常，请稍后重试!');
-        }
-    });
+    var formBox=$('#formBox');
+    formBox.find('input[name="lmamount"]').val(numInput.val());
+    formBox.find('input[name="lmoney"]').val(sumInput.val());
+    formBox.find('input[name="wishes"]').val(wishesInput.val());
+    formBox.find('input[name="lmtype"]').val(curIndex);
+    formBox.submit();
 }
 
 $(function(){

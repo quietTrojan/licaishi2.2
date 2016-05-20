@@ -1010,3 +1010,20 @@ table {
 }
 /* 媒体查询 begin */
 /* 媒体查询 end */
+/* 红包页面私有css文件 */
+.protocol_body .protocolWrap {
+  padding: 40px 20px 40px 20px;
+}
+.protocol_body .protocolWrap section {
+  margin-top: 20px;
+}
+.protocol_body .protocolWrap section:first-child {
+  margin-top: 0px;
+}
+.protocol_body .protocolWrap section p {
+  color: #4a4a4a;
+  font-size: 18px;
+  line-height: 24px;
+}
+/* 媒体查询 begin */
+/* 媒体查询 end */

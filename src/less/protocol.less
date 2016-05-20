@@ -1,0 +1,29 @@
+@import "reuseClass.less";//引入less重用class样式
+/* 红包页面私有css文件 */
+.protocol_body{
+  .protocolWrap{
+    &{
+      padding:40px 20px 40px 20px;
+    }
+    section{
+      &{
+        margin-top:20px;
+      }
+      &:first-child{
+        margin-top:0px;
+      }
+      p{
+        color: #4a4a4a;
+        font-size:18px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+/* 媒体查询 begin */
+@media screen and @iphone4Query {
+  .protocol_body{
+
+  }
+}
+/* 媒体查询 end */
