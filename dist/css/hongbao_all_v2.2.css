@@ -25,11 +25,11 @@ input[type="button"] {
   outline: none;
   border: none;
 }
-/*input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button{
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
   -webkit-appearance: none !important;
   margin: 0;
-}*/
+}
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
