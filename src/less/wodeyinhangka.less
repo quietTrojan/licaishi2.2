@@ -7,67 +7,71 @@
   .mainBox{
     padding: 0px 5%;
   }
-  .title_h3{
-    color: #4a4a4a;
-    font-size:18px;
-    font-weight: normal;
-    line-height: 26px;
-    padding-top:20px;
-  }
-  .bankCardInfor{
-    &{
-      background-color: #fff;
-      border-radius:3px;
-      margin-top:22px;
-      border:1px solid #E2E2E2;
+  .bankWrap{
+    .title_h3{
+      color: #4a4a4a;
+      font-size:18px;
+      font-weight: normal;
+      line-height: 26px;
+      padding-top:20px;
+    }
+    .bankCardInfor{
+      &{
+        background-color: #fff;
+        border-radius:3px;
+        margin-top:22px;
+        border:1px solid #E2E2E2;
+      }
+      .noBankTip,.addBankCard{
+        color: #f15858;
+        .h_line_h(82px);
+        font-size:24px;
+        text-align: center;
+        display: block;
+      }
+      .cardBox{
+        &{
+          padding: 20px 25px 20px 25px;
+        }
+        .left{
+          &{
+            float:left;
+          }
+          p:nth-of-type(1){
+            font-size:20px;
+            color: #4a4a4a;
+            .h_line_h(26px);
+          }
+          p:nth-of-type(2){
+            font-size:14px;
+            color: #9B9B9B;
+            .h_line_h(20px);
+          }
+        }
+        .right{
+          &{
+            float:right;
+          }
+          img{
+            height: 22px;
+            margin-top:12px;
+          }
+        }
+      }
+      .unBind{
+        margin: 0px 2px;
+        border-top:1px solid #EAEAEA;
+        .h_line_h(56px);
+        font-size:18px;
+        color: #ff726c;
+        display: block;
+        text-align: center;
+      }
     }
     &.noBank{
-      margin-top:50px;
-    }
-    .noBankTip,.addBankCard{
-      color: #f15858;
-      .h_line_h(82px);
-      font-size:24px;
-      text-align: center;
-      display: block;
-    }
-    .cardBox{
-      &{
-        padding: 20px 25px 20px 25px;
+      .bankCardInfor{
+        margin-top:50px;
       }
-      .left{
-        &{
-          float:left;
-        }
-        p:nth-of-type(1){
-          font-size:20px;
-          color: #4a4a4a;
-          .h_line_h(26px);
-        }
-        p:nth-of-type(2){
-          font-size:14px;
-          color: #9B9B9B;
-          .h_line_h(20px);
-        }
-      }
-      .right{
-        &{
-          float:right;
-        }
-        img{
-          height: 22px;
-          margin-top:12px;
-        }
-      }
-    }
-    .unBind{
-      margin: 0px 2px;
-      border-top:1px solid #EAEAEA;
-      .h_line_h(56px);
-      font-size:18px;
-      color: #ff726c;
-      display: block;
-      text-align: center;
     }
   }
   //  确认取消弹层

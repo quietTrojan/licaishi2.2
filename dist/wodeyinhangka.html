@@ -8,24 +8,33 @@
 
     <link rel="stylesheet" href="css/hongbao_all_v2.2.css">
     <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="js/base.js"></script>
     <script type="text/javascript" src="js/wodeyinhangka.js"></script>
 
     <title>我的银行卡</title>
 </head>
 <body class="myBankCard_body">
     <div class="mainBox">
-        <h3 class="title_h3">您已绑定快捷支付</h3>
-        <div class="bankCardInfor">
-            <div class="cardBox clearfix">
-                <div class="left">
-                    <p>中国工商银行</p>
-                    <p>尾号0788  储蓄卡</p>
+        <div class="bankWrap" id="existBankWrap">
+            <h3 class="title_h3">您已绑定快捷支付</h3>
+            <div class="bankCardInfor">
+                <div class="cardBox clearfix">
+                    <div class="left">
+                        <p>中国工商银行</p>
+                        <p>尾号0788  储蓄卡</p>
+                    </div>
+                    <div class="right">
+                        <img src="images/kuaijiezhifu.png"/>
+                    </div>
                 </div>
-                <div class="right">
-                    <img src="images/kuaijiezhifu.png"/>
-                </div>
+                <a href="javascript:;" class="unBind" id="unBind">解除绑定</a>
             </div>
-            <a href="javascript:;" data-skip-url="http://www.baidu.com" class="unBind" id="unBind">解除绑定</a>
+        </div>
+        <div class="bankWrap noBank" id="noBankWrap">
+            <h3 class="title_h3">您还没有绑定快捷银行卡，在您购买理财红包时会自动为您完成绑定。</h3>
+            <div class="bankCardInfor">
+                <p class="noBankTip">没有银行信息</p>
+            </div>
         </div>
     </div>
     <!-- 确认取消美化弹层 begin -->
@@ -35,6 +44,14 @@
         <div class="btnBox">
             <input type="button" value="确认"/>
             <input type="button" value="取消"/>
+        </div>
+    </div>
+    <!-- 确认取消美化弹层 end -->
+    <!-- 确认取消美化弹层 begin -->
+    <div class="confirmPop" id="alertPop">
+        <div class="tipText">提示信息！</div>
+        <div class="btnBox">
+            <input type="button" value="确认"/>
         </div>
     </div>
     <!-- 确认取消美化弹层 end -->

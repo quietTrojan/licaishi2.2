@@ -25,6 +25,11 @@ input[type="button"] {
   outline: none;
   border: none;
 }
+/*input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+  -webkit-appearance: none !important;
+  margin: 0;
+}*/
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
@@ -901,24 +906,21 @@ table {
 .myBankCard_body .mainBox {
   padding: 0px 5%;
 }
-.myBankCard_body .title_h3 {
+.myBankCard_body .bankWrap .title_h3 {
   color: #4a4a4a;
   font-size: 18px;
   font-weight: normal;
   line-height: 26px;
   padding-top: 20px;
 }
-.myBankCard_body .bankCardInfor {
+.myBankCard_body .bankWrap .bankCardInfor {
   background-color: #fff;
   border-radius: 3px;
   margin-top: 22px;
   border: 1px solid #E2E2E2;
 }
-.myBankCard_body .bankCardInfor.noBank {
-  margin-top: 50px;
-}
-.myBankCard_body .bankCardInfor .noBankTip,
-.myBankCard_body .bankCardInfor .addBankCard {
+.myBankCard_body .bankWrap .bankCardInfor .noBankTip,
+.myBankCard_body .bankWrap .bankCardInfor .addBankCard {
   color: #f15858;
   height: 82px;
   line-height: 82px;
@@ -926,32 +928,32 @@ table {
   text-align: center;
   display: block;
 }
-.myBankCard_body .bankCardInfor .cardBox {
+.myBankCard_body .bankWrap .bankCardInfor .cardBox {
   padding: 20px 25px 20px 25px;
 }
-.myBankCard_body .bankCardInfor .cardBox .left {
+.myBankCard_body .bankWrap .bankCardInfor .cardBox .left {
   float: left;
 }
-.myBankCard_body .bankCardInfor .cardBox .left p:nth-of-type(1) {
+.myBankCard_body .bankWrap .bankCardInfor .cardBox .left p:nth-of-type(1) {
   font-size: 20px;
   color: #4a4a4a;
   height: 26px;
   line-height: 26px;
 }
-.myBankCard_body .bankCardInfor .cardBox .left p:nth-of-type(2) {
+.myBankCard_body .bankWrap .bankCardInfor .cardBox .left p:nth-of-type(2) {
   font-size: 14px;
   color: #9B9B9B;
   height: 20px;
   line-height: 20px;
 }
-.myBankCard_body .bankCardInfor .cardBox .right {
+.myBankCard_body .bankWrap .bankCardInfor .cardBox .right {
   float: right;
 }
-.myBankCard_body .bankCardInfor .cardBox .right img {
+.myBankCard_body .bankWrap .bankCardInfor .cardBox .right img {
   height: 22px;
   margin-top: 12px;
 }
-.myBankCard_body .bankCardInfor .unBind {
+.myBankCard_body .bankWrap .bankCardInfor .unBind {
   margin: 0px 2px;
   border-top: 1px solid #EAEAEA;
   height: 56px;
@@ -960,6 +962,9 @@ table {
   color: #ff726c;
   display: block;
   text-align: center;
+}
+.myBankCard_body .bankWrap.noBank .bankCardInfor {
+  margin-top: 50px;
 }
 .myBankCard_body .confirmPop {
   border: 1px solid #C2C2C2;
