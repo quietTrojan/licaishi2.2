@@ -14,7 +14,7 @@ function handleError(err) {
 
 //定义一个testLess任务（自定义任务名称）
 gulp.task('less_css', function () {
-    return gulp.src(['src/less/hongbao_all_v2.2.less','src/less/test.less']) //该任务针对的文件
+    return gulp.src(['src/less/hongbao_all_v2.2.less','src/less/test.less','src/less/jieguoye.less']) //该任务针对的文件
         .pipe(less()).on('error', handleError)
         .pipe(prefix()).on('error', handleError)
         .pipe(gulp.dest('dist/css/'));
@@ -35,15 +35,19 @@ gulp.task('imagemin', function(){
 
 //gulp.task('default', ['concat_js','less_css','file_include']);
 
- /*gulp.task('styleInject',['less_css'],function () {
-    gulp.src(['src/htmlTemplate/404.html'])
+ gulp.task('styleInject',['less_css'],function () {
+    gulp.src(['src/htmlTel/*'])
         .pipe(styleInject())
-        .pipe(gulp.dest("build/"));
-});*/
+        .pipe(gulp.dest("dist/"));
+});
 
 gulp.task('watch', function () {
-    var watcher = gulp.watch(['src/**/*',], ['less_css']);
-    watcher.on('change', function(event) {
+    var watcher01 = gulp.watch(['src/**/*',], ['less_css']);
+    watcher01.on('change', function(event) {
+        console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+    });
+    var watcher02 = gulp.watch(['src/htmlTel/*','src/less/jieguoye.less'], ['styleInject']);
+    watcher02.on('change', function(event) {
         console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
     });
 });
