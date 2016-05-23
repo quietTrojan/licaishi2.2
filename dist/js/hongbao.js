@@ -38,8 +38,9 @@ function resetForm(){
 function validNumer(str){
     var tmpNum= 0,
         returnObj={
-        'val':0,
-        'valid':true
+            'val':0,
+            'valid':true,
+            'errorText':''
     };
     if(isNaN(str) || /^\s*0.*/.test(str)){
         returnObj.valid=false;
@@ -51,21 +52,63 @@ function validNumer(str){
     }
     if(returnObj.valid){
         returnObj.val = tmpNum;
+    }else{
+        returnObj.errorText="必须为正整数！";
     }
     return returnObj;
 }
-function inputVerify(){
+
+/**
+ * 判断有几位小数
+ * @param str
+ */
+function decimalsNum(str){
+    var decimalVal=str.split('.')[1];
+    if(typeof decimalVal != 'undefined'){
+        return decimalVal.length;
+    }else{
+        return 0;
+    }
+}
+/**
+ * 验证金额的合法性
+ * @param str
+ * @returns {{val: number, valid: boolean, errorText: string}}
+ */
+function validMoney(str){
+    var tmpNum= 0,
+        returnObj={
+            'val':0,
+            'valid':true,
+            'errorText':''
+        };
+    if(isNaN(str) || /^\s*0\d+/.test(str)){
+        returnObj.valid=false;
+        returnObj.errorText="必须为数字";
+    }else if(str<1){
+        returnObj.valid=false;
+        returnObj.errorText="不低于1元";
+    }
+
+    if(returnObj.valid){
+        returnObj.val = Number(str);
+    }
+    return returnObj;
+}
+function inputVerify(validType){
     var flag=true;
     var inputVal=$(this).val();
     var inputWrap=$(this).parents('.inputWrap:first');
     var curLabel=inputWrap.children('div:eq(0)').text();
     var errorP=inputWrap.nextAll('.error_p:first');
+    var validResult=null;
 
+    validResult=validType(inputVal);
     if(/^\s*$/.test(inputVal)){
         errorP.text(curLabel+'不能为空！');
         flag=false;
-    }else if(!validNumer(inputVal).valid){
-        errorP.text(curLabel+'必须为正整数！');
+    }else if(!validResult.valid){
+        errorP.text(curLabel+validResult.errorText);
         flag=false;
     }
     return flag;
@@ -77,24 +120,31 @@ function formVerify(curTabItem){
     var sumInput=curTabItem.find('.sum');
 
     curTabItem.find('.error_p').text('');
-    flag=inputVerify.apply(numInput.get(0));
+    flag=inputVerify.apply(numInput.get(0),[validNumer]);
     if(!flag){
         return flag;
     }
     if(numInput.val()>100){
-        numInput.parents('.inputWrap:first').nextAll('.error_p:first').text('红包个数必须是最小为1，最大为100');
+        numInput.parents('.inputWrap:first').nextAll('.error_p:first').text('一次最多发100个红包');
         flag=false;
     }
     if(!flag){
         return flag;
     }
-    flag=inputVerify.apply(sumInput.get(0));
+    flag=inputVerify.apply(sumInput.get(0),[validMoney]);
+    if(!flag){
+        return flag;
+    }
+    if(decimalsNum(sumInput.val())>2){
+        sumInput.parents('.inputWrap:first').nextAll('.error_p:first').text('金额最多两位小数');
+        flag=false;
+    }
     if(!flag){
         return flag;
     }
     if(curIndex==0){
         if(sumInput.val()>200){
-            sumInput.parents('.inputWrap:first').nextAll('.error_p:first').text('单个金额不能超过200元！');
+            sumInput.parents('.inputWrap:first').nextAll('.error_p:first').text('单个红包金额不可超过200元');
             flag=false;
         }
     }else if(curIndex==1){
@@ -136,7 +186,7 @@ function formSubmit(numInput,sumInput,wishesInput,curIndex){
     formBox.find('input[name="lmoney"]').val(sumInput.val());
     formBox.find('input[name="wishes"]').val(wishesInput.val());
     formBox.find('input[name="lmtype"]').val(curIndex);
-    formBox.submit();
+    //formBox.submit();
 }
 
 $(function(){
@@ -172,7 +222,7 @@ $(function(){
         var valPrefix= '¥';
         var valStr= '¥';
         var numValidObj=validNumer(numInput.val());
-        var sumValidObj=validNumer(sumInput.val());
+        var sumValidObj=validMoney(sumInput.val());
         var validFlag=false;
 
         if(curIndex==0){

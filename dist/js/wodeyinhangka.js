@@ -13,14 +13,14 @@ $(function(){
         showLoading();
 
         $.ajax({
-            url: "",
-            method: "",
+            url: "/fp/luckym/dlbank",
+            method: "get",
             data: {
 
             },
             dataType: "text",
             success:function(returnVal){
-                if(returnVal=="00"){
+                if(returnVal=="success"){
                     hideLoading();
                     existBankWrap.hide();
                     noBankWrap.show();
