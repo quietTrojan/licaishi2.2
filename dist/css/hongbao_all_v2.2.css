@@ -811,6 +811,7 @@ table {
 .yzsjh_body .formGroup .formInput:disabled {
   color: red;
   background-color: #ffffff;
+  opacity: 1;
 }
 .bangka_body .formGroup .codeVerify,
 .yzsjh_body .formGroup .codeVerify {
