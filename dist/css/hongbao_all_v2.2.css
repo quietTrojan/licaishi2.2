@@ -810,7 +810,7 @@ table {
 }
 .bangka_body .formGroup .formInput.disabled,
 .yzsjh_body .formGroup .formInput.disabled {
-  color: #878787;
+  color: red;
 }
 .bangka_body .formGroup .codeVerify,
 .yzsjh_body .formGroup .codeVerify {
