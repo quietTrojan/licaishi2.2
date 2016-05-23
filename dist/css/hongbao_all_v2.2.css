@@ -737,16 +737,10 @@ table {
 }
 .bangka_body .formGroup,
 .yzsjh_body .formGroup {
-  display: box;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: -webkit-flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: raw;
-          flex-direction: raw;
-  -webkit-flex-direction: raw;
   height: 50px;
   box-sizing: border-box;
   border: 1px solid #D8D8D8;
@@ -754,10 +748,6 @@ table {
   background-color: #fff;
   padding: 0px 10px;
   overflow-x: hidden;
-}
-.bangka_body .formGroup > *,
-.yzsjh_body .formGroup > * {
-  display: block;
 }
 .bangka_body .formGroup .formLabel,
 .yzsjh_body .formGroup .formLabel {
@@ -767,21 +757,11 @@ table {
   -webkit-flex-basis: 60px;
       -ms-flex-preferred-size: 60px;
           flex-basis: 60px;
-  display: box;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: -webkit-flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: raw;
-          flex-direction: raw;
-  -webkit-flex-direction: raw;
   margin-right: 15px;
-}
-.bangka_body .formGroup .formLabel > *,
-.yzsjh_body .formGroup .formLabel > * {
-  display: block;
 }
 .bangka_body .formGroup .formLabel i,
 .yzsjh_body .formGroup .formLabel i {
@@ -791,6 +771,7 @@ table {
       -ms-flex: 1;
           flex: 1;
   text-align: center;
+  width: 0;
 }
 .bangka_body .formGroup .formLabel i:nth-of-type(1),
 .yzsjh_body .formGroup .formLabel i:nth-of-type(1) {

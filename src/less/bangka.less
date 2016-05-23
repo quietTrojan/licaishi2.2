@@ -20,7 +20,7 @@
   }
   .formGroup{
     &{
-      .display_box;
+      display: flex;
       height: 50px;
       box-sizing: border-box;
       border: 1px solid #D8D8D8;
@@ -35,13 +35,14 @@
         color: #4a4a4a;
         line-height: 48px;
         flex-basis: 60px;
-        .display_box;
+        display: flex;
         margin-right:15px;
       }
       i{
         font-style: normal;
         flex: 1;
         text-align: center;
+        width: 0;
       }
       i:nth-of-type(1){
         text-align: left;
