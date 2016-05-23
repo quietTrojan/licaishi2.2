@@ -36,6 +36,10 @@ input[type="reset"] {
   -webkit-appearance: none;
   outline: none;
 }
+input:disabled {
+  -webkit-text-fill-color: #000000;
+  -webkit-opacity: 1;
+}
 img {
   width: 100%;
   height: auto;
@@ -810,7 +814,7 @@ table {
 }
 .bangka_body .formGroup .formInput.disabled,
 .yzsjh_body .formGroup .formInput.disabled {
-  color: red;
+  color: #878787;
 }
 .bangka_body .formGroup .codeVerify,
 .yzsjh_body .formGroup .codeVerify {
