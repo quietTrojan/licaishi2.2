@@ -633,9 +633,9 @@ table {
   box-sizing: border-box;
 }
 .yxzl_body .bottomBg img {
-  display: block;
-  width: 100%;
-  height: 100%;
+  /*display: block;
+      width:100%;
+      height: 100%;*/
 }
 /* 媒体查询 begin */
 @media screen and (max-width: 320px) {
