@@ -591,24 +591,20 @@ table {
   border-top-right-radius: 5px;
   margin: 0px auto;
   box-sizing: border-box;
-  display: box;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: -webkit-flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   z-index: 1;
-}
-.yxzl_body .hbInner > * {
-  display: block;
 }
 .yxzl_body .hbInner p {
   padding-bottom: 20px;
