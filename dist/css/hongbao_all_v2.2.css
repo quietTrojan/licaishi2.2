@@ -36,10 +36,6 @@ input[type="reset"] {
   -webkit-appearance: none;
   outline: none;
 }
-input:disabled {
-  opacity: 1;
-  background-color: inherit;
-}
 img {
   width: 100%;
   height: auto;
@@ -802,7 +798,6 @@ table {
 .bangka_body .formGroup .formInput,
 .yzsjh_body .formGroup .formInput {
   border: none;
-  background-color: #ffffff;
   color: #4a4a4a;
   font-size: 18px;
   height: 48px;
@@ -812,9 +807,10 @@ table {
   width: 100%;
   display: block;
 }
-.bangka_body .formGroup .formInput.disabled,
-.yzsjh_body .formGroup .formInput.disabled {
+.bangka_body .formGroup .formInput:disabled,
+.yzsjh_body .formGroup .formInput:disabled {
   color: #878787;
+  background-color: #ffffff;
 }
 .bangka_body .formGroup .codeVerify,
 .yzsjh_body .formGroup .codeVerify {
