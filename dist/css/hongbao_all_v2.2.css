@@ -629,6 +629,8 @@ table {
 }
 .yxzl_body .bottomBg.paddingPopBox {
   padding-top: 50%;
+  border: 5px yellow solid;
+  box-sizing: border-box;
 }
 .yxzl_body .bottomBg img {
   display: block;
