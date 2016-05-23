@@ -809,7 +809,7 @@ table {
 }
 .bangka_body .formGroup .formInput:disabled,
 .yzsjh_body .formGroup .formInput:disabled {
-  color: #878787;
+  color: red;
   background-color: #ffffff;
 }
 .bangka_body .formGroup .codeVerify,
