@@ -757,6 +757,13 @@ table {
   -webkit-flex-basis: 60px;
       -ms-flex-preferred-size: 60px;
           flex-basis: 60px;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -771,7 +778,6 @@ table {
       -ms-flex: 1;
           flex: 1;
   text-align: center;
-  width: 0;
 }
 .bangka_body .formGroup .formLabel i:nth-of-type(1),
 .yzsjh_body .formGroup .formLabel i:nth-of-type(1) {
