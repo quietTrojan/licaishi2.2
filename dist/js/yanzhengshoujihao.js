@@ -1,4 +1,25 @@
+function showTipFn(tipText,callBack){
+    var maskDiv=$('#maskDiv');
+    var confirmPop=$('#confirmPop');
+    var textSpan=confirmPop.find('.tipCont p span');
+    var okBtn=confirmPop.find('.btnBox .okBtn');
 
+    textSpan.text(tipText);
+    if(typeof callBack !="undefined"){
+        okBtn.unbind('click').on('click',function(){
+            maskDiv.add(confirmPop).hide();
+            callBack(confirmPop);
+        });
+    }else{
+        okBtn.unbind('click').on('click',function(){
+            maskDiv.add(confirmPop).hide();
+        });
+    }
+    confirmPop.css({
+        'margin-top':-confirmPop.height()/2
+    });
+    maskDiv.add(confirmPop).show();
+}
 function codeCountDown(){
     var count=60;
     var codeVerifyTimer=null;
@@ -20,7 +41,7 @@ function codeCountDown(){
 }
 $(function(){
     //一开始就发验证码，按钮进入倒计时状态
-    //codeCountDown();
+    codeCountDown();
 
     $('#codeVerify').on('click',function(){
         if($(this).hasClass('disabled')){
@@ -44,17 +65,15 @@ $(function(){
         });
         codeCountDown();
     });
+
     $('#submitBtn').on('click',function(){
         var checkCode=$('#checkCode');
         var merchantNo=$('#merchantNo');
         if(/^\s*$/.test(checkCode.val())){
-            $('#code_errorTip').text('验证码不能为空!');
+            $('#code_errorTip').removeClass('suc').text('验证码不能为空!');
             return;
         }
-        if($(this).data('ajaxLock')){
-           return;
-        }
-        $(this).data('ajaxLock',true);
+        showLoading();
         $.ajax({
             url: "/fp/luckym/confim",
             method: "get",
@@ -65,14 +84,20 @@ $(function(){
             dataType: "text",
             success:function(returnVal){
                 if(returnVal == '00'){
-                    location.assign('');
+                    showTipFn('验证成功，确认后跳转！',function(){
+                        showLoading('正在跳转…');
+                        setTimeout(function(){
+                            hideLoading();
+                        },3000);
+                    });
                 }else{
-                    alert(returnVal);
+                    hideLoading();
+                    showTipFn('服务端异常，请稍候重试！');
                 }
-                $(this).data('ajaxLock',false);
             },
             error:function(){
-                $(this).data('ajaxLock',false);
+                hideLoading();
+                showTipFn('服务端异常，请稍候重试！');
             }
         });
     });

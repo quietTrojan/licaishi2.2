@@ -126,7 +126,7 @@ table {
   line-height: 20px;
   color: #fff;
 }
-.confirmPop {
+.site_confirmPop {
   width: 84%;
   background-color: #fff;
   position: fixed;
@@ -134,36 +134,38 @@ table {
   left: 8%;
   top: 50%;
   border-radius: 10px;
+  display: none;
 }
-.confirmPop .tipCont .reuse_tip {
+.site_confirmPop .tipCont .reuse_tip {
   padding: 20px;
   text-align: center;
 }
-.confirmPop .tipCont .reuse_tip span {
+.site_confirmPop .tipCont .reuse_tip span {
   display: inline-block;
   vertical-align: top;
   text-align: left;
   font-size: 16px;
+  color: #7F7F7F;
 }
-.confirmPop .btnBox {
-  padding-bottom: 30px;
+.site_confirmPop .btnBox {
+  padding-bottom: 20px;
   text-align: center;
 }
-.confirmPop .btnBox input[type="button"] {
+.site_confirmPop .btnBox input[type="button"] {
   vertical-align: top;
   width: 128px;
   height: 40px;
   font-size: 14px;
   border-radius: 5px;
 }
-.confirmPop .btnBox input[type="button"]:nth-of-type(2) {
+.site_confirmPop .btnBox input[type="button"]:nth-of-type(2) {
   margin-left: 20px;
 }
-.confirmPop .btnBox input[type="button"].okBtn {
+.site_confirmPop .btnBox input[type="button"].okBtn {
   background-color: #F25858;
   color: #fff;
 }
-.confirmPop .btnBox input[type="button"].cancelBtn {
+.site_confirmPop .btnBox input[type="button"].cancelBtn {
   color: #4B4B4B;
   background-color: #fff;
   border: 1px solid #A1A1A1;
@@ -209,9 +211,13 @@ table {
   background-color: #EEEEEE;
 }
 .gmjl_body .itemBox {
-  padding: 20px 20px 20px 20px;
+  padding: 20px 15px 20px 15px;
   border-bottom: 1px solid #E6E6E6;
   background-color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 .gmjl_body .itemBox::after {
   content: '';
@@ -230,7 +236,16 @@ table {
   color: #f15858;
 }
 .gmjl_body .itemBox .left {
-  float: left;
+  -webkit-flex-basis: 250px;
+      -ms-flex-preferred-size: 250px;
+          flex-basis: 250px;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
 }
 .gmjl_body .itemBox .left .iconBox {
   width: 60px;
@@ -278,7 +293,10 @@ table {
   color: #F05656;
 }
 .gmjl_body .itemBox .right {
-  float: right;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 .gmjl_body .itemBox .right .oprBtn {
   width: 78px;
@@ -291,6 +309,8 @@ table {
   color: #ffffff;
   font-size: 18px;
   margin-top: 10px;
+  white-space: nowrap;
+  word-wrap: normal;
 }
 .gmjl_body .noRecord {
   position: fixed;
@@ -312,7 +332,7 @@ table {
   color: #867F7F;
 }
 /* 媒体查询 begin */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 370px) {
   .gmjl_body .itemBox {
     padding: 20px 10px;
   }

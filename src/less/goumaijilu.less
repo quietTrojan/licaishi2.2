@@ -9,10 +9,10 @@
   }
   .itemBox{
     &{
-      padding:20px 20px 20px 20px;
+      padding:20px 15px 20px 15px;
       border-bottom:1px solid #E6E6E6;
       background-color: #fff;
-
+      display: flex;
     }
     &::after{
       .clearfix();
@@ -39,7 +39,9 @@
     }
     .left{
       &{
-        float:left;
+        flex-basis: 250px;
+        flex-shrink: 0;
+        flex-grow: 0;
       }
       .iconBox{
         .w_h_val(60px);
@@ -90,7 +92,7 @@
     }
     .right{
       &{
-        float:right;
+        flex:1;
       }
       .oprBtn{
         width:78px;
@@ -102,6 +104,8 @@
         color: #ffffff;
         font-size:18px;
         margin-top:10px;
+        white-space: nowrap;
+        word-wrap: normal;
       }
     }
   }
@@ -123,7 +127,7 @@
   }
 }
 /* 媒体查询 begin */
-@media screen and @iphone4Query {
+@media screen and (max-width: 370px) {
   .gmjl_body{
     .itemBox{
       &{
