@@ -20,7 +20,7 @@ function codeCountDown(){
 }
 $(function(){
     //一开始就发验证码，按钮进入倒计时状态
-    codeCountDown();
+    //codeCountDown();
 
     $('#codeVerify').on('click',function(){
         if($(this).hasClass('disabled')){
