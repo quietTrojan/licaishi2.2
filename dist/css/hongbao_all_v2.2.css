@@ -815,7 +815,6 @@ table {
 .bangka_body .formGroup .codeVerify,
 .yzsjh_body .formGroup .codeVerify {
   height: 32px;
-  line-height: 32px;
   border-radius: 5px;
   background-color: #4790ef;
   border: none;
