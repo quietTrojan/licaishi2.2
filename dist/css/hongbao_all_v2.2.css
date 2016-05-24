@@ -645,7 +645,7 @@ table {
   padding-top: 50%;
 }
 .yxzl_body .bottomBg.paddingPopBox .paddingPopInner {
-  background: url("../images/yxzl_bottom_bg.png") no-repeat;
+  background: url("../images/yxzl_bottom_bg.png") 0px 0px no-repeat;
   background-size: 100% 100%;
 }
 /* 媒体查询 begin */
