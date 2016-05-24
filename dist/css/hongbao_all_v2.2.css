@@ -582,6 +582,7 @@ table {
       -ms-flex: 1;
           flex: 1;
   position: relative;
+  z-index: 1;
 }
 .yxzl_body .hbBox .bottomImg {
   position: absolute;
@@ -613,8 +614,7 @@ table {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  z-index: 1;
-  padding-bottom: 1px;
+  padding-bottom: 5px;
 }
 .yxzl_body .hbInner p {
   padding-bottom: 20px;
@@ -643,6 +643,7 @@ table {
 }
 .yxzl_body .bottomBg.paddingPopBox {
   padding-top: 50%;
+  z-index: 2;
 }
 .yxzl_body .bottomBg.paddingPopBox .paddingPopInner {
   background: url("../images/yxzl_bottom_bg.png") 0px 0px no-repeat;
