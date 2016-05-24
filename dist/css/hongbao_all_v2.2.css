@@ -644,6 +644,8 @@ table {
 }
 .yxzl_body .bottomBg.paddingPopBox {
   padding-top: 50%;
+}
+.yxzl_body .bottomBg.paddingPopBox .paddingPopInner {
   background: url("../images/yxzl_bottom_bg.png") no-repeat;
   background-size: 100% 100%;
   border: 5px blue solid;

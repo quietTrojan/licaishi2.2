@@ -72,12 +72,16 @@
   }
   .bottomBg{
     &.paddingPopBox{
-      padding-top:50%;
-      background:url("../images/yxzl_bottom_bg.png") no-repeat;
-      background-size:100% 100%;
-      border:5px blue solid;
-      box-sizing: border-box;
-      background-clip: border-box;
+      &{
+        padding-top:50%;
+      }
+      .paddingPopInner{
+        background:url("../images/yxzl_bottom_bg.png") no-repeat;
+        background-size:100% 100%;
+        border:5px blue solid;
+        box-sizing: border-box;
+        background-clip: border-box;
+      }
     }
   }
 }
