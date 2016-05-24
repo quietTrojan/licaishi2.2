@@ -600,7 +600,6 @@ table {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   margin: 0px auto;
-  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -615,6 +614,7 @@ table {
       -ms-flex-pack: center;
           justify-content: center;
   z-index: 1;
+  padding-bottom: 1px;
 }
 .yxzl_body .hbInner p {
   padding-bottom: 20px;
@@ -645,10 +645,8 @@ table {
   padding-top: 50%;
 }
 .yxzl_body .bottomBg.paddingPopBox .paddingPopInner {
-  background-color: #ffffff;
+  background: url("../images/yxzl_bottom_bg.png") no-repeat;
   background-size: 100% 100%;
-  box-sizing: border-box;
-  background-clip: border-box;
 }
 /* 媒体查询 begin */
 @media screen and (max-width: 320px) {
