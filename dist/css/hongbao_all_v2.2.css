@@ -582,7 +582,6 @@ table {
       -ms-flex: 1;
           flex: 1;
   position: relative;
-  height: 0px;
 }
 .yxzl_body .hbBox .bottomImg {
   position: absolute;
