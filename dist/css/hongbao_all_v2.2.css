@@ -430,7 +430,7 @@ table {
   background-color: rebeccapurple;
 }
 .hongbao_body .tabContBox .inputWrap .formInput::-webkit-input-placeholder {
-  color: #878787;
+  color: red;
 }
 .hongbao_body .tabContBox .error_p {
   font-size: 12px;
