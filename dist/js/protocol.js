@@ -4,6 +4,6 @@ $(function(){
         parentWindow=window.parent;
     }
     if(parentWindow){
-        parentWindow.find('iframe').remove();
+        $(parentWindow).find('iframe').remove();
     }
 });
